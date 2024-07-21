@@ -1,0 +1,28 @@
+.Sidebar_Wrapper {
+    @apply w-16 rounded-full bg-purple flex flex-col items-center p-3 justify-between;
+    .Profile_Picture {
+        @apply rounded-full;
+    }
+
+    .navigation {
+        ul {
+            @apply flex flex-col items-center gap-12;
+        }
+    }
+
+    .Flag {
+        @apply mb-2;
+    }
+}
+
+.Sidebar_Button {
+    @apply cursor-pointer hover:translate-y-1 transition-all;
+}
+
+.active {
+    @apply opacity-100;
+}
+
+.inactive {
+    @apply opacity-60 hover:opacity-100;
+}

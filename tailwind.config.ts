@@ -5,6 +5,9 @@ export default {
         colors: {
             purple: "#4B0195",
         },
+        fontFamily: {
+            poppins: "Poppins",
+        },
         extend: {},
     },
     plugins: [],

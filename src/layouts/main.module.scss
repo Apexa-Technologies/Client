@@ -6,24 +6,11 @@
     @apply min-h-screen min-w-full p-5 flex gap-4;
 }
 
-.Sidebar_Wrapper {
-    @apply w-16 rounded-full bg-purple flex flex-col items-center p-3 justify-between;
-    .Profile_Picture {
-        @apply rounded-full;
-    }
-    .Flag {
-        @apply mb-2;
-    }
-}
-
 .Right {
     @apply grow flex flex-col gap-4;
-
-    .Topbar_Wrapper {
-        @apply h-16 rounded-full bg-purple;
-    }
-
     .Content {
+        border: 1px red solid;
+        overflow-y: scroll;
         @apply h-full;
     }
 }
