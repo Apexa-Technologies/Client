@@ -9,8 +9,6 @@
 .Right {
     @apply grow flex flex-col gap-4;
     .Content {
-        border: 1px red solid;
-        overflow-y: scroll;
         @apply h-full;
     }
 }
