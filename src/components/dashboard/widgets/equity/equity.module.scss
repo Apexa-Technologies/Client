@@ -1,6 +1,13 @@
 .Wrapper {
-    @apply w-full h-full;
+    @apply flex flex-col w-full h-full;
 }
 .Chart {
     @apply w-full h-full;
+}
+
+.Header {
+    .EquityText {
+        font-size: 5rem;
+        @apply ml-5 mt-2 z-10 absolute
+    }
 }

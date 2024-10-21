@@ -6,7 +6,7 @@
     @apply min-h-screen min-w-full p-5 flex gap-4;
 }
 
-.Right {
+.Main {
     @apply grow flex flex-col gap-4;
     .Content {
         @apply h-full;

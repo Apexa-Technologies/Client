@@ -6,7 +6,7 @@ export default function Layout(props: any) {
     return (
         <div className={page.page}>
             <Sidebar />
-            <div className={page.Right}>
+            <div className={page.Main}>
                 <Topbar />
                 <div className={page.Content}>{props.children}</div>
             </div>
