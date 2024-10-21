@@ -14,7 +14,10 @@ export default function DashboardPage() {
                 {/* Left Bottom */}
                 <section className="flex gap-5 grow">
                     <div className="bg-purple w-1/2 rounded-3xl"></div>
-                    <div className="bg-purple w-1/2 rounded-3xl"></div>
+                    <div className="flex flex-col gap-5 w-1/2">
+                        <div className="bg-purple w-full h-1/2 rounded-3xl"></div>
+                        <div className="bg-purple w-full h-1/2 rounded-3xl"></div>
+                    </div>
                 </section>
             </section>
 

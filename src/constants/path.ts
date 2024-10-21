@@ -4,4 +4,6 @@ export enum RoutePath {
     Journal = "/journal",
     Calculator = "/calculator",
     Calender = "/calender",
+    Setup = "/setup",
+    Login = "/login",
 }
