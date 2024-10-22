@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button1 from "../../components/inputs/button1";
 import Input1 from "../../components/inputs/input1";
 import { useState } from "react";
