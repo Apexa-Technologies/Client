@@ -1,8 +1,14 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import Button1 from "../../components/inputs/button1";
 import Input1 from "../../components/inputs/input1";
+import { useQueryClient } from "@tanstack/react-query";
+import axios from "axios";
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
 
 export default function SetupPage() {
+    const queryClient = useQueryClient();
+    const navigate = useNavigate();
     const [step, setStep] = useState(1);
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -14,9 +20,35 @@ export default function SetupPage() {
         if (step < 3) {
             setStep(step + 1);
         } else {
-            console.log(firstName, lastName, email, password, equity);
+            handleSubmit();
         }
     };
+
+    const handleSubmit = async () => {
+        try {
+            const { data }:any = await axios.post('/setup', {
+                "email": email,
+                "password": password,
+                "first name": firstName,
+                "last name": lastName,
+                "equity": equity
+            })
+
+            if(!data){
+                console.error("No Response From Server");
+            }
+
+            if(data.error){
+                console.error(data.error)
+            }
+
+            if(data.status == "Complete" && data.token) {
+                localStorage.setItem("AUTH", data.token);
+                navigate("/dashboard");
+            }
+        }
+        catch(err) {console.error(err)}
+    }
 
     return (
         <div className="h-screen w-full flex justify-center items-center">
@@ -82,7 +114,11 @@ export default function SetupPage() {
 
                 <div className="flex w-full gap-8 justify-center">
                     <a className="opacity-80 font-light hover:underline hover:opacity-60 hover:cursor-pointer">Forgot Password</a>
-                    <a className="opacity-80 font-light hover:underline hover:opacity-60 hover:cursor-pointer">Account Login</a>
+                    <a className="opacity-80 font-light hover:underline hover:opacity-60 hover:cursor-pointer"
+                        onClick={() => {
+                            navigate('/login')
+                        }}
+                        >Account Login</a>
                 </div>
             </div>
         </div>

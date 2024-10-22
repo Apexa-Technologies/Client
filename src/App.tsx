@@ -1,5 +1,6 @@
 import AppRoutes from "./routes";
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function App() {
@@ -8,6 +9,8 @@ export default function App() {
     useEffect(() => {
         navigate('/dashboard')
     }, [])
+
+    axios.defaults.baseURL = "http://localhost:8000/api/";
 
     return <AppRoutes />;
 }
