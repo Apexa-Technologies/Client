@@ -7,7 +7,7 @@ export default function DashboardPage() {
             {/* Left Section */}
             <section className="h-full w-4/6 flex flex-col gap-5">
                 {/* Equity */}
-                <div className="bg-purple w-full h-1/2 rounded-3xl">
+                <div className="bg-purple w-full h-1/2 rounded-3xl overflow-hidden">
                     <Equity />
                 </div>
 

@@ -14,7 +14,7 @@ export default function Bubble(props: Value){
     }
 
     return(
-        <div className={`flex ml-2 mr-2 p-0 rounded-full items-baseline h-fit ${Positive ? 'bg-green' : 'bg-red'}`}>
+        <div className={`flex p-0 rounded-full items-baseline h-fit ${Positive ? 'bg-green' : 'bg-red'}`}>
             <p className="m-0 ml-2.5 mr-2.5 self-center text-lg">{props.value}%</p>
         </div>
     )

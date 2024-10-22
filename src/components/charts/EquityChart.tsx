@@ -10,57 +10,56 @@ export default function EquityChart(){
             "data": [
                 {
                     "x": "plane",
-                    "y": 248
+                    "y": 135
                   },
                   {
                     "x": "helicopter",
-                    "y": 230
+                    "y": 120
                   },
                   {
                     "x": "boat",
-                    "y": 249
+                    "y": 105
                   },
                   {
                     "x": "train",
-                    "y": 242
+                    "y": 140
                   },
                   {
                     "x": "subway",
-                    "y": 133
+                    "y": 170
                   },
                   {
                     "x": "bus",
-                    "y": 255
+                    "y": 170
                   },
                   {
                     "x": "car",
-                    "y": 73
+                    "y": 150
                   },
                   {
                     "x": "moto",
-                    "y": 35
+                    "y": 210
                   },
                   {
                     "x": "bicycle",
-                    "y": 134
+                    "y": 220
                   },
                   {
                     "x": "horse",
-                    "y": 87
+                    "y": 190
                   },
                   {
                     "x": "skateboard",
-                    "y": 70
+                    "y": 200
                   },
                   {
                     "x": "others",
-                    "y": 292
+                    "y": 230
                   }
             ]
         }
     ]
 
-    
     return(
         <ResponsiveLine 
             data={data}
@@ -98,8 +97,6 @@ export default function EquityChart(){
             useMesh={true}
 
             defs={[
-              // using helpers
-              // will inherit colors from current element
               linearGradientDef('gradientA', [
                   { offset: 0, color: 'inherit' },
                   { offset: 100, color: 'inherit', opacity: 0 },
@@ -108,30 +105,22 @@ export default function EquityChart(){
                   { offset: 0, color: '#000' },
                   { offset: 100, color: 'inherit' },
               ],
-              // you may specify transforms for your gradients, e.g. rotations and skews,
-              // following the transform attribute format.
-              // For instance here we rotate 90 degrees relative to the center of the object.
               {
                   gradientTransform: 'rotate(90 0.5 0.5)'
               }),
-              // using plain object
               {
                   id: 'gradientC',
                   type: 'linearGradient',
                   colors: [
                       { offset: 0, color: '#AD00FF' },
-                      { offset: 100, color: '#AD00FF00' },
+                      { offset: 70, color: '#AD00FF00' },
                   ],
               },
           ]}
 
             fill={[
-              // match using object query
               { match: { id: 'react' }, id: 'gradientA' },
-              // match using function
               { match: d => d.id === 'vue', id: 'gradientB' },
-              // match all, will only affect 'elm', because once a rule match,
-              // others are skipped, so now it acts as a fallback
               { match: '*', id: 'gradientC' },
           ]}
         />

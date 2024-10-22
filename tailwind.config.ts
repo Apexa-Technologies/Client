@@ -25,6 +25,8 @@ export default {
             green2: "#71FFCC",
             pink2: "#FF60B6",
 
+            black: "rgba(0, 0, 0, 0.5)",
+
             transparent: "rgba(0, 0, 0, 0)"
         },
         fontFamily: {

@@ -6,12 +6,12 @@
 }
 
 .Header {
-    @apply ml-5 mt-2 z-10 absolute;
+    @apply ml-5 mt-4 z-10 absolute;
     .Top{
         @apply flex items-baseline;
         .EquityText {
             font-size: 1.5rem;
-            @apply mb-0 opacity-75 ml-2;
+            @apply mb-0 opacity-75 ml-2 mr-3;
         }
     }
     

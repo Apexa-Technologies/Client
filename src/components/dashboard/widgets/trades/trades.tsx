@@ -1,74 +1,54 @@
+import { useState } from "react";
+import NewTradePanel from "../../popups/newTrade";
+
 export default function Trades() {
-    const trades = [
-        {
-            id: 1,
-            Direction: "long",
-            Profit: "1493",
-            Pair: "XAUUSD",
-        },
-        {
-            id: 2,
-            Direction: "short",
-            Profit: "-232",
-            Pair: "EURUSD",
-        },
-        {
-            id: 3,
-            Direction: "long",
-            Profit: "-359",
-            Pair: "XAUUSD",
-        },
-        {
-            id: 4,
-            Direction: "long",
-            Profit: "1350",
-            Pair: "XAUUSD",
-        },
-        {
-            id: 5,
-            Direction: "long",
-            Profit: "1904",
-            Pair: "XAUUSD",
-        },
-        {
-            id: 6,
-            Direction: "long",
-            Profit: "-359",
-            Pair: "XAUUSD",
-        },
-    ];
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    let trades: { id: number, direction: string, profit: number, pair: string }[] = [];
+
+    function displayTrades() {
+        if (trades.length > 0) {
+            return trades.map((trade) => (
+                <div
+                    key={trade.id}
+                    className={`w-full bg-gradient-to-r h-16 rounded-full flex justify-between items-center p-5 transition-all hover:translate-y-0.5 hover:opacity-60 cursor-pointer ${
+                        trade.profit > 0
+                            ? "from-cyan-60 to-green-60"
+                            : "from-red-60 to-pink-60"
+                    }`}
+                >
+                    <p className="text-3xl">{trade.pair}</p>
+                    <p className="text-2xl relative left--1/2 translate-x--1/2 hover:underline">
+                        View
+                    </p>
+                    <p
+                        className={`font-medium text-4xl ${
+                            trade.profit > 0 ? "text-green-2" : "text-pink-2"
+                        }`}
+                    >
+                        ${trade.profit.toLocaleString()}
+                    </p>
+                </div>
+            ));
+        } else {
+            return (
+                <div className="flex justify-center mt-5 mb-5">
+                    <h1 className="text-3xl opacity-80">No Trades Yet!</h1>
+                </div>
+            );
+        }
+    }
+
     return (
         <div className="w-full flex flex-col p-5">
             <h1 className="text-4xl">Recent Trades</h1>
-            <div className="flex flex-col gap-3 mt-5 overflow-y-auto mb-3">
-                {trades.map((trade) => {
-                    const NewProfit = parseInt(trade.Profit);
-                    return (
-                        <div
-                            className={`w-full bg-gradient-to-r h-16 rounded-full flex justify-between items-center p-5 transition-all hover:translate-y-0.5 hover:opacity-60 cursor-pointer ${
-                                NewProfit > 0
-                                    ? "from-cyan60 to-green60"
-                                    : "from-red60 to-pink60"
-                            }`}
-                        >
-                            <p className="text-3xl">{trade.Pair}</p>
-                            <p className="text-2xl relative left--1/2 translate-x--1/2 hover:underline">
-                                View
-                            </p>
-                            <p
-                                className={`font-medium text-4xl ${
-                                    NewProfit > 0 ? "text-green2" : "text-pink2"
-                                }`}
-                            >
-                                ${NewProfit.toLocaleString()}
-                            </p>
-                        </div>
-                    );
-                })}
+            <div className="flex flex-col gap-3 mt-3 overflow-y-auto mb-3">
+                {displayTrades()}
             </div>
-            <div className="w-full bg-grey h-16 rounded-full flex justify-center items-center p-5 transition-all hover:translate-y-1 hover:opacity-60 cursor-pointer">
+            <div onClick={() => setIsModalOpen(true)} className="w-full bg-grey h-16 rounded-full flex justify-center items-center p-5 transition-all hover:translate-y-1 hover:opacity-60 cursor-pointer">
                 <p className="text-2xl">Add New Trade</p>
             </div>
+
+            {isModalOpen && <NewTradePanel close={() => setIsModalOpen(false)}/>}
         </div>
     );
 }

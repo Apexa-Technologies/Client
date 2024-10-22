@@ -27,10 +27,10 @@ export default function SetupPage() {
     const handleSubmit = async () => {
         try {
             const { data }:any = await axios.post('/setup', {
+                "first": firstName,
+                "last": lastName,
                 "email": email,
                 "password": password,
-                "first name": firstName,
-                "last name": lastName,
                 "equity": equity
             })
 
@@ -42,7 +42,7 @@ export default function SetupPage() {
                 console.error(data.error)
             }
 
-            if(data.status == "Complete" && data.token) {
+            if(data.status == "success" && data.token) {
                 localStorage.setItem("AUTH", data.token);
                 navigate("/dashboard");
             }

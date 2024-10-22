@@ -12,7 +12,7 @@ export default function Layout() {
         {
             navigate("login")
         }
-    }, [])
+    })
     return (
         <div className={page.page}>
             <Sidebar />
