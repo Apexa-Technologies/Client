@@ -11,16 +11,19 @@ import JournalPage from "../pages/journal/journal";
 
 export default function AppRoutes() {
     return (
-        <Layout>
+        <>
+            
             <Routes>
-                <Route path={RoutePath.Dashboard} element={<DashboardPage />} />
-                <Route path={RoutePath.Journal} element={<JournalPage />} />
-                <Route path={RoutePath.News} element={<NewsPage />} />
-                <Route path={RoutePath.Calculator} element={<CalculatorPage />} />
-                <Route path={RoutePath.Calender} element={<CalenderPage />} />
                 <Route path={RoutePath.Setup} element={<SetupPage />} />
                 <Route path={RoutePath.Login} element={<LoginPage />} />
+                <Route element={<Layout />}>
+                    <Route path={RoutePath.Dashboard} element={<DashboardPage />} />
+                    <Route path={RoutePath.Journal} element={<JournalPage />} />
+                    <Route path={RoutePath.News} element={<NewsPage />} />
+                    <Route path={RoutePath.Calculator} element={<CalculatorPage />} />
+                    <Route path={RoutePath.Calender} element={<CalenderPage />} />
+                </Route>
             </Routes>
-        </Layout>
+        </>
     );
 }

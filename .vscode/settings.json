@@ -8,5 +8,18 @@
         "**/Thumbs.db": true,
         "./tailwind.config.ts": true,
         "./postcss.config.js": true,
+        "**/node_modules": true,
+        "**/.gitattributes": true,
+        "**/.gitignore": true,
+        "**/package-lock.json": true,
+        "postcss.config.js": true,
+        "tailwind.config.ts": false,
+        "tsconfig.json": true,
+        "tsconfig.node.json": true,
+        "vite.config.ts": true,
+        "**/Cargo.toml": true,
+        "**/Cargo.lock": true,
+        "**/target": true,
+        "**/vite-env.d.ts": true,
     }
 }

@@ -43,7 +43,6 @@ export default function Trades() {
             <div className="flex flex-col gap-3 mt-5 overflow-y-auto mb-3">
                 {trades.map((trade) => {
                     const NewProfit = parseInt(trade.Profit);
-                    console.log(trade);
                     return (
                         <div
                             className={`w-full bg-gradient-to-r h-16 rounded-full flex justify-between items-center p-5 transition-all hover:translate-y-0.5 hover:opacity-60 cursor-pointer ${

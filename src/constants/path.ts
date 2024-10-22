@@ -1,9 +1,10 @@
 export enum RoutePath {
-    Dashboard = "/",
-    News = "/news",
-    Journal = "/journal",
-    Calculator = "/calculator",
-    Calender = "/calender",
-    Setup = "/setup",
-    Login = "/login",
+    Dashboard = "dashboard",
+    News = "news",
+    Journal = "journal",
+    Calculator = "calculator",
+    Calender = "calender",
+    Setup = "setup",
+    Login = "login",
+    User = "user"
 }

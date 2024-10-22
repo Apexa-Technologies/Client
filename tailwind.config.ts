@@ -14,6 +14,9 @@ export default {
             pink: "#DC00B9",
             red: "#D20032",
 
+            darkpurple: "#4C0087",
+            darkpurple2: "#370377",
+
             pink60: "rgba(220, 0, 185, 0.5)",
             red60: "rgba(210,0, 50,0.6)",
 
@@ -21,11 +24,17 @@ export default {
 
             green2: "#71FFCC",
             pink2: "#FF60B6",
+
+            transparent: "rgba(0, 0, 0, 0)"
         },
         fontFamily: {
             poppins: "Poppins",
         },
-        extend: {},
+        extend: {
+            backgroundImage: {
+                "arrow": "url('src/assets/arrow.svg')"
+            }
+        },
     },
     plugins: [],
 };

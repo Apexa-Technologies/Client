@@ -19,7 +19,9 @@ export default function Sidebar() {
                         ButtonPath="/calender"
                         ButtonImage={calender}
                     />
-                    <Sidebar_Button ButtonPath="/" ButtonImage={home} />
+                    <Sidebar_Button 
+                        ButtonPath="/dashboard" 
+                        ButtonImage={home} />
                     <Sidebar_Button
                         ButtonPath="/calculator"
                         ButtonImage={caculator}
