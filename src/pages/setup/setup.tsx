@@ -3,11 +3,9 @@ import Button1 from "../../components/inputs/button1";
 import Input1 from "../../components/inputs/input1";
 import { useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
-import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
 export default function SetupPage() {
-    const queryClient = useQueryClient();
     const navigate = useNavigate();
     const [step, setStep] = useState(1);
     const [firstName, setFirstName] = useState("");
@@ -26,35 +24,38 @@ export default function SetupPage() {
 
     const handleSubmit = async () => {
         try {
-            const { data }:any = await axios.post('/setup', {
-                "first": firstName,
-                "last": lastName,
-                "email": email,
-                "password": password,
-                "equity": equity
-            })
+            const { data }: any = await axios.post("/setup", {
+                first: firstName,
+                last: lastName,
+                email: email,
+                password: password,
+                equity: equity,
+            });
 
-            if(!data){
+            if (!data) {
                 console.error("No Response From Server");
             }
 
-            if(data.error){
-                console.error(data.error)
+            if (data.error) {
+                console.error(data.error);
             }
 
-            if(data.status == "success" && data.token) {
+            if (data.status == "success" && data.token) {
                 localStorage.setItem("AUTH", data.token);
                 navigate("/dashboard");
             }
+        } catch (err) {
+            console.error(err);
         }
-        catch(err) {console.error(err)}
-    }
+    };
 
     return (
         <div className="h-screen w-full flex justify-center items-center">
             <div className="w-1/4 h-fit bg-gradient-to-b from-purple to-darkpurple rounded-3xl flex flex-col items-center p-8 pb-3 border-2 border-pink60">
                 <h1 className="text-5xl font-semibold">Apexa Journal</h1>
-                <h2 className="mt-4 text-2xl opacity-80">Let's Get You Set Up!</h2>
+                <h2 className="mt-4 text-2xl opacity-80">
+                    Let's Get You Set Up!
+                </h2>
 
                 <div className="w-full flex flex-col items-center mt-8">
                     {step === 1 && (
@@ -64,14 +65,18 @@ export default function SetupPage() {
                                 input="First Name"
                                 id="first"
                                 value={firstName}
-                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setFirstName(e.target.value)}
+                                onChange={(
+                                    e: React.ChangeEvent<HTMLInputElement>
+                                ) => setFirstName(e.target.value)}
                             />
                             <Input1
                                 type="text"
                                 input="Last Name"
                                 id="last"
                                 value={lastName}
-                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setLastName(e.target.value)}
+                                onChange={(
+                                    e: React.ChangeEvent<HTMLInputElement>
+                                ) => setLastName(e.target.value)}
                             />
                         </>
                     )}
@@ -83,14 +88,18 @@ export default function SetupPage() {
                                 input="Email"
                                 id="email"
                                 value={email}
-                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                                onChange={(
+                                    e: React.ChangeEvent<HTMLInputElement>
+                                ) => setEmail(e.target.value)}
                             />
                             <Input1
                                 type="password"
                                 input="Password"
                                 id="password"
                                 value={password}
-                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPassword(e.target.value)}
+                                onChange={(
+                                    e: React.ChangeEvent<HTMLInputElement>
+                                ) => setPassword(e.target.value)}
                             />
                         </>
                     )}
@@ -102,7 +111,9 @@ export default function SetupPage() {
                                 input="Current Equity"
                                 id="equity"
                                 value={equity}
-                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEquity(parseFloat(e.target.value) || 0)}
+                                onChange={(
+                                    e: React.ChangeEvent<HTMLInputElement>
+                                ) => setEquity(parseFloat(e.target.value) || 0)}
                             />
                         </>
                     )}
@@ -113,12 +124,17 @@ export default function SetupPage() {
                 </div>
 
                 <div className="flex w-full gap-8 justify-center">
-                    <a className="opacity-80 font-light hover:underline hover:opacity-60 hover:cursor-pointer">Forgot Password</a>
-                    <a className="opacity-80 font-light hover:underline hover:opacity-60 hover:cursor-pointer"
+                    <a className="opacity-80 font-light hover:underline hover:opacity-60 hover:cursor-pointer">
+                        Forgot Password
+                    </a>
+                    <a
+                        className="opacity-80 font-light hover:underline hover:opacity-60 hover:cursor-pointer"
                         onClick={() => {
-                            navigate('/login')
+                            navigate("/login");
                         }}
-                        >Account Login</a>
+                    >
+                        Account Login
+                    </a>
                 </div>
             </div>
         </div>
