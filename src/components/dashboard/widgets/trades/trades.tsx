@@ -1,58 +1,47 @@
-import { useEffect, useState } from "react";
-import NewTradePanel from "../../popups/newTrade";
-import axios from "axios";
+import { useState } from "react";
+import NewTradePanel from "../../modals/newTrade";
+import { getTrades } from "../../../../api/trades";
+import { useQuery } from "@tanstack/react-query";
 
 export default function Trades() {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [data, setData] = useState<any>(null); // Store fetched data here
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await axios.get("/trades", {
-                    headers: {
-                        Authorization: localStorage.getItem("AUTH") || "",
-                    },
-                });
-
-                if (response.status === 200) {
-                    setData(response.data.trades);
-                } else if (response.status === 403) {
-                    console.log("Forbidden");
-                } else {
-                    console.log("No Response from server or No Data");
-                }
-            } catch (error) {
-                console.log(error);
-            }
-        };
-
-        fetchData();
-    }, []);
+    const { isPending, error, data, isFetching } = useQuery({
+        queryKey: ["Trades"],
+        queryFn: () => getTrades(),
+    });
 
     function displayTrades() {
-        if (data && data.length > 0) {
-            return data.map((trade: any) => (
-                <div
-                    className={`w-full bg-gradient-to-r h-16 rounded-full flex justify-between items-center p-5 transition-all hover:translate-y-0.5 hover:opacity-60 cursor-pointer ${
-                        trade.Profit > 0
-                            ? "from-cyan-60 to-green-60"
-                            : "from-red-60 to-pink-60"
-                    }`}
-                >
-                    <p className="text-3xl">{trade.Pair}</p>
-                    <p className="text-2xl relative left--1/2 translate-x--1/2 hover:underline">
-                        View
-                    </p>
-                    <p
-                        className={`font-medium text-4xl ${
-                            trade.Profit > 0 ? "text-green-2" : "text-pink-2"
-                        }`}
-                    >
-                        ${trade.Profit.toLocaleString()}
-                    </p>
-                </div>
-            ));
+        if (data?.trades && data?.trades.length > 0) {
+            return data.trades
+                .slice(-5)
+                .reverse()
+                .map((trade: any) => {
+                    return (
+                        <div
+                            key={trade._id}
+                            className={`w-full bg-gradient-to-r h-16 rounded-full flex justify-between items-center p-5 transition-all hover:translate-y-0.5 hover:opacity-60 cursor-pointer ${
+                                trade.Profit > 0
+                                    ? "from-cyan60 to-green60"
+                                    : "from-red60 to-pink60"
+                            }`}
+                        >
+                            <p className="text-3xl">{trade.Pair}</p>
+                            <p className="text-2xl relative left--1/2 translate-x--1/2 hover:underline">
+                                View
+                            </p>
+                            <p
+                                className={`font-medium text-4xl ${
+                                    trade.Profit > 0
+                                        ? "text-green-2"
+                                        : "text-pink-2"
+                                }`}
+                            >
+                                ${trade.Profit.toLocaleString()}
+                            </p>
+                        </div>
+                    );
+                });
         } else {
             return (
                 <div className="flex justify-center mt-5 mb-5">

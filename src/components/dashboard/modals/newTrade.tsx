@@ -3,54 +3,37 @@ import close from "../../../assets/close.svg";
 import Input1 from "../../inputs/input1";
 import TextBox1 from "../../inputs/textbox1";
 import Button1 from "../../inputs/button1";
-import axios from "axios";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { postTrades } from "../../../api/trades";
+import toast from "react-hot-toast";
 
 export default function NewTradePanel(props: any) {
+    const queryClient = useQueryClient();
     const [entry, setEntry] = useState<number | null>(null);
     const [stop, setStop] = useState<number | null>(null);
     const [take, setTake] = useState<number | null>(null);
     const [pair, setPair] = useState("");
     const [note, setNote] = useState("");
 
-    async function handleSubmit() {
-        try {
-            const { data }: any = axios
-                .post(
-                    "/newtrade",
-                    {
-                        entry: entry,
-                        stop: stop,
-                        take: take,
-                        rr: null,
-                        pair: pair,
-                        note: note,
-                    },
-                    {
-                        headers: {
-                            Authorization: localStorage.getItem("AUTH"),
-                        },
-                    }
-                )
-                .then((Response) => {
-                    if (!Response) {
-                        console.error("No Response From Server");
-                    }
-                    if (Response.status === 400) {
-                        console.log("bad request");
-                    }
-                    if (Response.status === 403) {
-                        console.log("Not Allowed");
-                    }
-                    if (Response.data.error) {
-                        console.log(data.error);
-                    }
-                    if (Response.status === 200) {
-                        props.close();
-                    }
-                });
-        } catch (error) {
-            console.log(error);
-        }
+    const mutation = useMutation({
+        mutationKey: ["Trades"],
+        mutationFn: postTrades,
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ["Trades"] });
+            toast.success("Added New Trade!");
+            props.close();
+        },
+    });
+
+    function handleSubmit() {
+        mutation.mutate({
+            entry: entry,
+            stop: stop,
+            take: take,
+            pair: pair,
+            note: note,
+        });
+        props.close();
     }
 
     return (
