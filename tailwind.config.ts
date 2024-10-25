@@ -25,17 +25,26 @@ export default {
             green2: "#71FFCC",
             pink2: "#FF60B6",
 
+            green3: "rgba(0, 232, 134, 0.7)",
+            cyan2: "rgba(0, 243, 200, 0.7)",
+
             black: "rgba(0, 0, 0, 0.5)",
 
-            transparent: "rgba(0, 0, 0, 0)"
+            pink3: "rgba(235, 0, 169, 0.7)",
+            red2: "rgba(232, 0, 111, 0.7)",
+
+            darkred: "rgba(139, 0, 50, 0.6)",
+            darkgreen: "rgba(0, 90, 52, 0.6)",
+
+            transparent: "rgba(0, 0, 0, 0)",
         },
         fontFamily: {
             poppins: "Poppins",
         },
         extend: {
             backgroundImage: {
-                "arrow": "url('src/assets/arrow.svg')"
-            }
+                arrow: "url('src/assets/arrow.svg')",
+            },
         },
     },
     plugins: [],

@@ -2,9 +2,11 @@ import { useState } from "react";
 import NewTradePanel from "../../modals/newTrade";
 import { getTrades } from "../../../../api/trades";
 import { useQuery } from "@tanstack/react-query";
+import TradeModal from "../../modals/trade";
 
 export default function Trades() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isTradeOpen, setIsTradeOpen] = useState(false);
 
     const { isPending, error, data, isFetching } = useQuery({
         queryKey: ["Trades"],
@@ -20,14 +22,17 @@ export default function Trades() {
                     return (
                         <div
                             key={trade._id}
-                            className={`w-full bg-gradient-to-r h-16 rounded-full flex justify-between items-center p-5 transition-all hover:translate-y-0.5 hover:opacity-60 cursor-pointer ${
+                            className={`w-full bg-gradient-to-r relative h-16 rounded-full flex justify-between items-center p-5 transition-all hover:translate-y-0.5 hover:opacity-60 cursor-pointer ${
                                 trade.Profit > 0
                                     ? "from-cyan60 to-green60"
                                     : "from-red60 to-pink60"
                             }`}
                         >
                             <p className="text-3xl">{trade.Pair}</p>
-                            <p className="text-2xl relative left--1/2 translate-x--1/2 hover:underline">
+                            <p
+                                className="text-2xl absolute left-1/2 transform -translate-x-1/2 hover:underline"
+                                onClick={() => setIsTradeOpen(true)}
+                            >
                                 View
                             </p>
                             <p
@@ -54,7 +59,7 @@ export default function Trades() {
     return (
         <div className="w-full flex flex-col p-5">
             <h1 className="text-4xl">Recent Trades</h1>
-            <div className="flex flex-col gap-3 mt-3 overflow-y-auto mb-3">
+            <div className="flex flex-col gap-3 mt-3 overflow-hidden mb-3">
                 {displayTrades()}
             </div>
             <div
@@ -66,6 +71,13 @@ export default function Trades() {
 
             {isModalOpen && (
                 <NewTradePanel close={() => setIsModalOpen(false)} />
+            )}
+            {isTradeOpen && (
+                <TradeModal
+                    close={() => {
+                        setIsTradeOpen(false);
+                    }}
+                />
             )}
         </div>
     );

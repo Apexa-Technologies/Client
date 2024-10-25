@@ -1,9 +1,8 @@
 import axios from "axios";
-import toast from "react-hot-toast";
 
 export async function getTrades() {
     try {
-        const response = await axios.get("trades", {
+        const response = await axios.get("recentTrades", {
             headers: {
                 Authorization: localStorage.getItem("AUTH") || "",
             },

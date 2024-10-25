@@ -1,9 +1,10 @@
+import Days from "../../components/dashboard/widgets/days/days";
 import Equity from "../../components/dashboard/widgets/equity/equity";
 import Trades from "../../components/dashboard/widgets/trades/trades";
 
 export default function DashboardPage() {
     return (
-        <div className="h-full flex flex-wrap gap-5 overflow-y-scroll">
+        <div className="h-full flex flex-wrap gap-5 overflow-y-hidden">
             {/* Left Section */}
             <section className="h-full w-4/6 flex flex-col gap-5">
                 {/* Equity */}
@@ -28,8 +29,8 @@ export default function DashboardPage() {
                     <Trades />
                 </div>
                 {/* Days */}
-                <div className="bg-purple rounded-3xl h-full first:w-full">
-
+                <div className="bg-purple rounded-3xl h-fit first:w-full">
+                    <Days />
                 </div>
             </section>
         </div>

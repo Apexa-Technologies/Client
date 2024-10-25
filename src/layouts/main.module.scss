@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 .page {
-    @apply min-h-screen min-w-full p-5 flex gap-4;
+    @apply min-h-screen min-w-full p-5 flex gap-4 overflow-hidden;
 }
 
 .Main {
-    @apply grow flex flex-col gap-4;
+    @apply grow flex flex-col gap-4 overflow-y-scroll max-h-screen;
     .Content {
-        @apply h-full;
+        @apply h-full mb-10;
     }
 }
