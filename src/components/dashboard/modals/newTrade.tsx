@@ -4,7 +4,7 @@ import Input1 from "../../inputs/input1";
 import TextBox1 from "../../inputs/textbox1";
 import Button1 from "../../inputs/button1";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { postTrades } from "../../../api/trades";
+import { postTrades } from "../../../api/api";
 import toast from "react-hot-toast";
 
 export default function NewTradePanel(props: any) {

@@ -1,37 +1,36 @@
+import { useQuery } from "@tanstack/react-query";
+import { getLast5Days } from "../../../../api/api";
+import { useState } from "react";
+import DayModal from "../../modals/day";
+
 export default function Days() {
-    const days = [
-        {
-            date: "7/5",
-            weekday: "FRI",
-            profit: 1.7,
-        },
-        {
-            date: "7/4",
-            weekday: "THU",
-            profit: 0.3,
-        },
-        {
-            date: "7/3",
-            weekday: "WED",
-            profit: 2.6,
-        },
-        {
-            date: "7/2",
-            weekday: "TUE",
-            profit: -0.6,
-        },
-        {
-            date: "7/1",
-            weekday: "MON",
-            profit: 1.2,
-        },
-    ];
+    const [isModalOpen, setModal] = useState(false);
+    const [selectedDay, setDay] = useState(null);
+
+    const { isPending, error, data, isFetching }: any = useQuery({
+        queryKey: ["5Days"],
+        queryFn: getLast5Days,
+    });
+
+    function formatDate(n: any) {
+        const date = new Date(n);
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        return `${month}/${day}`;
+    }
+
+    function openModal(day: any) {
+        setDay(day);
+        setModal(true);
+    }
 
     function displayDays() {
-        if (days && days.length > 0) {
-            return days.map((day: any) => {
+        if (data.days && data.days.length > 0) {
+            return data.days.map((day: any) => {
                 return (
                     <div
+                        key={day._id}
+                        onClick={() => openModal(day)}
                         className={`w-full h-16 flex justify-between relative items-center bg-gradient-to-r rounded-3xl hover:translate-y-0.5 p-5 hover:opacity-60 cursor-pointer transition-all ${
                             day.profit > 0
                                 ? "from-green3 to-cyan2"
@@ -39,7 +38,7 @@ export default function Days() {
                         }`}
                     >
                         <div className="flex items-end gap-1">
-                            <h1 className="text-3xl">{day.date}</h1>
+                            <h1 className="text-3xl">{formatDate(day.date)}</h1>
                             <h3 className="text-xl">{day.weekday}</h3>
                         </div>
                         <p className="text-2xl absolute left-1/2 transform -translate-x-1/2 hover:underline">
@@ -64,12 +63,46 @@ export default function Days() {
         }
     }
 
-    return (
-        <div className="w-full flex flex-col p-5">
-            <h1 className="text-4xl">Recent Days</h1>
-            <div className="flex flex-col gap-3 mt-3 overflow-hidden mb-3">
-                {displayDays()}
+    if (error) {
+        return (
+            <div className="w-full flex flex-col p-5">
+                <h1 className="text-4xl">Recent Days</h1>
+                <div className="flex flex-col gap-3 mt-3 overflow-hidden mb-3">
+                    <h1 className="text-3xl opacity-80">Error</h1>
+                </div>
             </div>
-        </div>
-    );
+        );
+    }
+
+    if (isFetching || isPending) {
+        return (
+            <div className="w-full flex flex-col p-5">
+                <h1 className="text-4xl">Recent Days</h1>
+                <div className="flex flex-col gap-3 mt-3 overflow-hidden mb-3">
+                    <h1 className="text-3xl opacity-80">Loading</h1>
+                </div>
+            </div>
+        );
+    }
+
+    if (data) {
+        return (
+            <>
+                <div className="w-full flex flex-col p-5">
+                    <h1 className="text-4xl">Recent Days</h1>
+                    <div className="flex flex-col gap-3 mt-3 overflow-hidden mb-3">
+                        {displayDays()}
+                    </div>
+                </div>
+                {isModalOpen && (
+                    <DayModal
+                        close={() => {
+                            setModal(false);
+                        }}
+                        day={selectedDay}
+                    />
+                )}
+            </>
+        );
+    }
 }
