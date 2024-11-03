@@ -13,6 +13,7 @@ export default {
 
             pink: "#DC00B9",
             red: "#D20032",
+            purple2: "#AE01FF",
 
             darkpurple: "#4C0087",
             darkpurple2: "#370377",

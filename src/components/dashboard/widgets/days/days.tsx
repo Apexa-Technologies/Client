@@ -26,34 +26,41 @@ export default function Days() {
 
     function displayDays() {
         if (data.days && data.days.length > 0) {
-            return data.days.map((day: any) => {
-                return (
-                    <div
-                        key={day._id}
-                        onClick={() => openModal(day)}
-                        className={`w-full h-16 flex justify-between relative items-center bg-gradient-to-r rounded-3xl hover:translate-y-0.5 p-5 hover:opacity-60 cursor-pointer transition-all ${
-                            day.profit > 0
-                                ? "from-green3 to-cyan2"
-                                : "from-red2 to-pink3"
-                        }`}
-                    >
-                        <div className="flex items-end gap-1">
-                            <h1 className="text-3xl">{formatDate(day.date)}</h1>
-                            <h3 className="text-xl">{day.weekday}</h3>
-                        </div>
-                        <p className="text-2xl absolute left-1/2 transform -translate-x-1/2 hover:underline">
-                            View
-                        </p>
+            return data.days
+                .slice(-5)
+                .reverse()
+                .map((day: any) => {
+                    return (
                         <div
-                            className={` rounded-3xl w-16 flex items-center justify-center h-11 ${
-                                day.profit > 0 ? "bg-darkgreen" : "bg-darkred"
+                            key={day._id}
+                            onClick={() => openModal(day)}
+                            className={`w-full h-16 flex justify-between relative items-center bg-gradient-to-r rounded-3xl hover:translate-y-0.5 p-5 hover:opacity-60 cursor-pointer transition-all ${
+                                day.profit > 0
+                                    ? "from-green3 to-cyan2"
+                                    : "from-red2 to-pink3"
                             }`}
                         >
-                            <h1 className="text-lg">{day.profit}%</h1>
+                            <div className="flex items-end gap-1">
+                                <h1 className="text-3xl">
+                                    {formatDate(day.date)}
+                                </h1>
+                                <h3 className="text-xl">{day.weekday}</h3>
+                            </div>
+                            <p className="text-2xl absolute left-1/2 transform -translate-x-1/2 hover:underline">
+                                View
+                            </p>
+                            <div
+                                className={` rounded-3xl w-16 flex items-center justify-center h-11 ${
+                                    day.profit > 0
+                                        ? "bg-darkgreen"
+                                        : "bg-darkred"
+                                }`}
+                            >
+                                <h1 className="text-lg">{day.profit}%</h1>
+                            </div>
                         </div>
-                    </div>
-                );
-            });
+                    );
+                });
         } else {
             return (
                 <div className="flex justify-center mt-5 mb-5">

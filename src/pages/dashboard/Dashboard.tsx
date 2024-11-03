@@ -1,5 +1,6 @@
 import Days from "../../components/dashboard/widgets/days/days";
 import Equity from "../../components/dashboard/widgets/equity/equity";
+import Notes from "../../components/dashboard/widgets/notes/notes";
 import Trades from "../../components/dashboard/widgets/trades/trades";
 
 export default function DashboardPage() {
@@ -14,7 +15,9 @@ export default function DashboardPage() {
 
                 {/* Left Bottom */}
                 <section className="flex gap-5 grow">
-                    <div className="bg-purple w-1/2 rounded-3xl"></div>
+                    <div className="bg-purple w-1/2 rounded-3xl">
+                        <Notes />
+                    </div>
                     <div className="flex flex-col gap-5 w-1/2">
                         <div className="bg-purple w-full h-1/2 rounded-3xl"></div>
                         <div className="bg-purple w-full h-1/2 rounded-3xl"></div>

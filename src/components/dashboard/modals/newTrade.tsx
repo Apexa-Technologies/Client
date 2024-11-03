@@ -20,6 +20,7 @@ export default function NewTradePanel(props: any) {
         mutationFn: postTrades,
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["Trades"] });
+            queryClient.invalidateQueries({ queryKey: ["Days"] });
             toast.success("Added New Trade!");
             props.close();
         },

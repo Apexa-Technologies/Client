@@ -9,6 +9,6 @@
 .Main {
     @apply grow flex flex-col gap-4 overflow-y-scroll max-h-screen;
     .Content {
-        @apply h-full mb-10;
+        @apply h-full;
     }
 }
