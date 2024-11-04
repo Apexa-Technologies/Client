@@ -8,3 +8,6 @@ alot of thought should be put into the design of this software, make sure the co
 
 ### Theme 2
 ![theme2](https://media.discordapp.net/attachments/1043040632781942854/1302836851811553341/Desktop.png?ex=672990df&is=67283f5f&hm=9788078e9df7f2c7d281f5cb2437328896d9e22d102d9e7508fbe688df5e6275&=&format=webp&quality=lossless)
+
+### Theme 3 (unfinished)
+![theme3](https://media.discordapp.net/attachments/1043040632781942854/1302837332613009458/Desktop.png?ex=67299151&is=67283fd1&hm=ff6187c71de0bd5aa5bc7c1c54ae92df2cc269492d133007a812c255f82a2954&=&format=webp&quality=lossless)
