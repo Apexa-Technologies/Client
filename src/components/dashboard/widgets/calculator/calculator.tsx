@@ -7,9 +7,9 @@ export default function Calculator() {
     const [stop, setStop] = useState<number | null>(null);
     const [risk, setRisk] = useState<number | null>(null);
     return (
-        <div className="w-full flex flex-col p-5 h-full">
+        <div className="w-full flex flex-col p-5 h-full grow">
             <h1 className="text-4xl">Quick Calculator</h1>
-            <div className="flex flex-col h-full w-full grow mt-5 items-center pb-14">
+            <div className="flex flex-col h-full w-full grow mt-5 items-center">
                 <div className="mb-3 w-full">
                     <Input1
                         type="number"

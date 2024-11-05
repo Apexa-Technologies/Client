@@ -4,9 +4,12 @@ export enum RoutePath {
     Journal = "journal",
     Calculator = "calculator",
     Calender = "calender",
+
     Setup = "setup",
     Login = "login",
+
     User = "user",
+
     Settings = "settings",
     Account = "account",
     General = "general",

@@ -8,42 +8,42 @@ import NewNotesModal from "../../modals/notes";
 export default function Notes() {
     const [modalOpened, setModalOpen] = useState(false);
 
-    const { data = [] } = useQuery({
+    const { data, isLoading }: any = useQuery({
         queryKey: ["Notes"],
         queryFn: getQuickNotes,
     });
 
     const DisplayNotes = () =>
         data
-            .slice(-4)
-            .reverse()
-            .map((note: any, index: any) => (
+            ?.slice(-6)
+            ?.reverse()
+            ?.map((note: any) => (
                 <div
                     key={note.id}
                     className="bg-darkprimary flex flex-col rounded-[2rem] h-44 p-5"
                 >
                     <h3 className="opacity-70">{note.subject}</h3>
-                    <p className="text-2xl">{note.note}</p>
+                    <p className="text-2xl text-wrap w-full">{note.note}</p>
                 </div>
             ));
 
     const Filler = () => {
-        const fillerCount = Math.max(0, 4 - data.length);
+        const fillerCount = Math.max(0, 6 - data?.length);
         return Array.from({ length: fillerCount }).map((_, index) => (
             <div
                 key={index}
-                className="bg-darkprimary/60 rounded-[2rem] p-5"
+                className="bg-darkprimary/60 rounded-[2rem] p-5 h-44"
             ></div>
         ));
     };
 
     const NotesContent = () =>
-        data.length === 0 ? (
+        data && !isLoading && data?.length === 0 ? (
             <div className="grid justify-center align-middle pt-10 pb-10">
                 <h1 className="text-3xl opacity-80">No Notes Yet</h1>
             </div>
         ) : (
-            <div className="grid grid-cols-2 grid-rows-2 gap-4">
+            <div className="grid grid-cols-2 gap-4 h-full w-full overflow-y-hidden">
                 <DisplayNotes />
                 <Filler />
             </div>

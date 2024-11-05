@@ -11,7 +11,7 @@ export default function Layout() {
     const { data, isLoading } = useQuery({
         queryKey: ["User"],
         queryFn: getUser,
-        staleTime: 1000 * 60,
+        staleTime: 1000 * 60 * 5,
     });
 
     if (!isLoading && !data) {

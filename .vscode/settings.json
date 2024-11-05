@@ -13,13 +13,14 @@
         "**/.gitignore": true,
         "**/package-lock.json": true,
         "postcss.config.js": true,
-        "tailwind.config.ts": false,
+        "tailwind.config.ts": true,
         "tsconfig.json": true,
         "tsconfig.node.json": true,
         "vite.config.ts": true,
         "**/Cargo.toml": true,
         "**/Cargo.lock": true,
+        "**/README.md": true,
         "**/target": true,
-        "**/vite-env.d.ts": true,
+        "**/vite-env.d.ts": true
     }
 }

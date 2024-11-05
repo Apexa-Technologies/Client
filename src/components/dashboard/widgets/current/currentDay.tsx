@@ -9,7 +9,7 @@ export default function CurrentDay() {
                     <h1 className="text-4xl">Current Day</h1>
                     <Dots />
                 </div>
-                <div className=" min-h-32 items-center justify-center flex">
+                <div className=" min-h-48 items-center justify-center flex">
                     <h1 className="text-2xl">No Open Trades to Display</h1>
                 </div>
                 <hr className="opacity-70" />
