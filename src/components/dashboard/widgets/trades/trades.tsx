@@ -4,13 +4,25 @@ import { getTrades } from "../../../../api/api";
 import { useQuery } from "@tanstack/react-query";
 import TradeModal from "../../modals/trade";
 import Dots from "../../../inputs/dots";
+import * as userTypes from "../../../../types/user";
+import { AnimatePresence } from "framer-motion";
 
 export default function Trades() {
     const [selectedTrade, setTrade] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isTradeOpen, setIsTradeOpen] = useState(false);
 
-    const { isPending, error, data, isFetching } = useQuery({
+    interface TradesQueryResults {
+        isPending: boolean;
+        error: any;
+        data: userTypes.trades | undefined;
+        isFetching: boolean;
+    }
+
+    const { isPending, error, data, isFetching }: TradesQueryResults = useQuery<
+        userTypes.trades,
+        Error
+    >({
         queryKey: ["Trades"],
         queryFn: () => getTrades(),
     });
@@ -21,11 +33,11 @@ export default function Trades() {
     }
 
     function displayTrades() {
-        if (data?.trades && data?.trades.length > 0) {
+        if (data && data.trades && data.trades.length > 0) {
             return data.trades
                 .slice(-5)
                 .reverse()
-                .map((trade: any) => {
+                .map((trade: userTypes.trade) => {
                     return (
                         <div
                             key={trade._id}
@@ -77,7 +89,7 @@ export default function Trades() {
         );
     }
 
-    if (data) {
+    if (data && data.trades) {
         return (
             <div className="w-full flex flex-col p-5 h-full">
                 <div className="flex justify-between items-center">
@@ -97,17 +109,23 @@ export default function Trades() {
                     </div>
                 </div>
 
-                {isModalOpen && (
-                    <NewTradePanel close={() => setIsModalOpen(false)} />
-                )}
-                {isTradeOpen && (
-                    <TradeModal
-                        close={() => {
-                            setIsTradeOpen(false);
-                        }}
-                        trade={selectedTrade}
-                    />
-                )}
+                <AnimatePresence
+                    initial={false}
+                    mode="wait"
+                    onExitComplete={() => null}
+                >
+                    {isModalOpen && (
+                        <NewTradePanel close={() => setIsModalOpen(false)} />
+                    )}
+                    {isTradeOpen && (
+                        <TradeModal
+                            close={() => {
+                                setIsTradeOpen(false);
+                            }}
+                            trade={selectedTrade}
+                        />
+                    )}
+                </AnimatePresence>
             </div>
         );
     }

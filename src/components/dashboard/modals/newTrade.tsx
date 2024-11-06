@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import close from "../../../assets/close.svg";
 import Input1 from "../../inputs/input1";
 import TextBox1 from "../../inputs/textbox1";
@@ -15,6 +16,8 @@ export default function NewTradePanel(props: any) {
     const [pair, setPair] = useState("");
     const [note, setNote] = useState("");
 
+    const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
     const mutation = useMutation({
         mutationKey: ["Trades"],
         mutationFn: postTrades,
@@ -22,6 +25,7 @@ export default function NewTradePanel(props: any) {
             queryClient.invalidateQueries({ queryKey: ["Trades"] });
             queryClient.invalidateQueries({ queryKey: ["5Days"] });
             toast.success("Added New Trade!");
+            sleep(200);
             props.close();
         },
     });
@@ -38,7 +42,12 @@ export default function NewTradePanel(props: any) {
     }
 
     return (
-        <div className="bg-[#000]/30 fixed bg-black w-screen h-screen top-0 left-0 z-20 backdrop-blur flex items-center justify-center">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="bg-[#000]/30 fixed bg-black w-screen h-screen top-0 left-0 z-20 backdrop-blur flex items-center justify-center"
+        >
             <div className="bg-primary rounded-3xl w-4/6 h-1/2 flex flex-col p-6 pb-16">
                 <div className="w-full flex relative mb-14">
                     <h1 className="text-center text-4xl font-semibold">
@@ -110,6 +119,6 @@ export default function NewTradePanel(props: any) {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }

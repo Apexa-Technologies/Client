@@ -3,7 +3,8 @@ import close from "../../../assets/close.svg";
 import Input1 from "../../inputs/input1";
 import TextBox1 from "../../inputs/textbox1";
 import Button1 from "../../inputs/button1";
-import { Query, useMutation, useQueryClient } from "@tanstack/react-query";
+import { motion } from "framer-motion";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { postQuickNotes } from "../../../api/api";
 
@@ -36,7 +37,12 @@ export default function NewNotesModal(props: any) {
     }
 
     return (
-        <div className="bg-[#000]/30 top-0 left-0 z-30 flex items-center justify-center fixed h-screen w-screen backdrop-blur">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="bg-[#000]/30 top-0 left-0 z-30 flex items-center justify-center fixed h-screen w-screen backdrop-blur"
+        >
             <div className="bg-primary flex flex-col rounded-[2rem] w-2/6 h-2/3 p-6">
                 <div className="w-full flex justify-between items-center mb-4">
                     <h1 className="text-3xl">New Note</h1>
@@ -91,6 +97,6 @@ export default function NewNotesModal(props: any) {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }

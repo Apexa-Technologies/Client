@@ -6,11 +6,23 @@ import { useNavigate } from "react-router-dom";
 import { RoutePath } from "../../../constants/path";
 import { useQuery } from "@tanstack/react-query";
 import { getUser } from "../../../api/api";
+import toast from "react-hot-toast";
+import * as userTypes from "../../../types/user";
 
 export default function DashboardTopbar() {
     const navigate = useNavigate();
 
-    const { isPending, error, data, isFetching }: any = useQuery({
+    interface UserQueryResult {
+        isPending: boolean;
+        error: any;
+        data: userTypes.user | undefined;
+        isFetching: boolean;
+    }
+
+    const { isPending, error, data, isFetching }: UserQueryResult = useQuery<
+        userTypes.user,
+        Error
+    >({
         queryKey: ["User"],
         queryFn: getUser,
         staleTime: 1000 * 60,
@@ -80,7 +92,19 @@ export default function DashboardTopbar() {
         );
     }
 
-    if (data)
+    if (isFetching || isPending) {
+        return (
+            <div className={page.Topbar_Wrapper}>
+                <h1>loading</h1>
+            </div>
+        );
+    }
+
+    if (error) {
+        toast.error("Error fetching data");
+    }
+
+    if (data && !isFetching && !isPending)
         return (
             <div className={page.Topbar_Wrapper}>
                 <p className={page.Welcome_Message}>

@@ -1,9 +1,13 @@
 import close from "../../../assets/close.svg";
-import TextBox1 from "../../inputs/textbox1";
-
+import { motion } from "framer-motion";
 export default function TradeModal(props: any) {
     return (
-        <div className="bg-[#000]/30 top-0 left-0 z-30 flex items-center justify-center fixed h-screen w-screen backdrop-blur">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="bg-[#000]/30 top-0 left-0 z-30 flex items-center justify-center fixed h-screen w-screen backdrop-blur"
+        >
             <div className="rounded-3xl bg-primary min-h-24 w-5/12 flex flex-col p-5 pb-10">
                 <div className="text-3xl flex justify-between">
                     <h1>TradeID: {props.trade._id}</h1>
@@ -55,6 +59,6 @@ export default function TradeModal(props: any) {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
