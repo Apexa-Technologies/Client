@@ -1,9 +1,7 @@
-import page from "./main.module.scss";
 import Sidebar from "../components/sidebar/sidebar";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getUser } from "../api/api";
-import Topbar from "../components/topbar/topbar";
 
 export default function Layout() {
     const navigate = useNavigate();
@@ -22,11 +20,10 @@ export default function Layout() {
 
     if (data)
         return (
-            <div className={page.page}>
-                <Sidebar />
-                <div className={page.Main}>
-                    <Topbar />
-                    <div className={page.Content}>
+            <div className="min-h-screen min-w-full p-5 flex gap-4 overflow-hidden">
+                <div className="grow flex gap-4 overflow-y-hidden max-h-screen">
+                    <Sidebar />
+                    <div className="mb-10 w-full min-h-fit overflow-y-scroll">
                         <Outlet />
                     </div>
                 </div>
