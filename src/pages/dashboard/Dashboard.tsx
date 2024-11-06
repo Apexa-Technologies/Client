@@ -20,7 +20,7 @@ export default function DashboardPage() {
 
                     {/* Left Bottom */}
                     <section className="flex gap-5">
-                        <div className="bg-primary w-1/2 rounded-[2rem]">
+                        <div className="bg-primary w-1/2 rounded-[2rem] h-fit min-h-64">
                             <Notes />
                         </div>
                         <div className="flex flex-col w-1/2 gap-5">

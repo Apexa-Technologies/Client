@@ -5,23 +5,23 @@ import calender from "../../assets/calender.svg";
 import caculator from "../../assets/calulator.svg";
 import news from "../../assets/news.svg";
 import journal from "../../assets/journal.svg";
-import page from "./sidebar.module.scss";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Sidebar() {
     return (
-        <div className={page.Sidebar_Wrapper}>
-            <img src={profile} className={page.Profile_Picture} />
-            <div className={page.navigation}>
-                <ul>
+        <div className="w-16 mb-10 rounded-full bg-primary flex flex-col items-center p-3 justify-between">
+            <img src={profile} className="rounded-full" />
+            <div>
+                <ul className="flex flex-col items-center gap-12">
                     <Sidebar_Button ButtonPath="/news" ButtonImage={news} />
                     <Sidebar_Button
                         ButtonPath="/calender"
                         ButtonImage={calender}
                     />
-                    <Sidebar_Button 
-                        ButtonPath="/dashboard" 
-                        ButtonImage={home} />
+                    <Sidebar_Button
+                        ButtonPath="/dashboard"
+                        ButtonImage={home}
+                    />
                     <Sidebar_Button
                         ButtonPath="/calculator"
                         ButtonImage={caculator}
@@ -32,7 +32,7 @@ export default function Sidebar() {
                     />
                 </ul>
             </div>
-            <img src={flag} className={page.Flag} />
+            <img src={flag} className="mb-2" />
         </div>
     );
 }
@@ -52,10 +52,10 @@ function Sidebar_Button(props: Props) {
     }
     return (
         <li
-            className={`${page.Sidebar_Button} ${
+            className={`cursor-pointer hover:translate-y-1 transition-all ${
                 location.pathname == props.ButtonPath
-                    ? page.active
-                    : page.inactive
+                    ? "opacity-100"
+                    : "opacity-60 hover:opacity-100"
             }`}
             onClick={handleClick}
         >

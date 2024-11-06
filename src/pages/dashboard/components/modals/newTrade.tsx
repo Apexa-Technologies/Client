@@ -14,6 +14,7 @@ export default function NewTradePanel(props: any) {
     const [stop, setStop] = useState<number | null>(null);
     const [take, setTake] = useState<number | null>(null);
     const [pair, setPair] = useState("");
+    const [profit, setProfit] = useState<number | null>(null);
     const [note, setNote] = useState("");
 
     const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -37,6 +38,7 @@ export default function NewTradePanel(props: any) {
             take: take,
             pair: pair,
             note: note,
+            profit: profit,
         });
         props.close();
     }
@@ -101,6 +103,15 @@ export default function NewTradePanel(props: any) {
                             onChange={(
                                 e: React.ChangeEvent<HTMLInputElement>
                             ) => setPair(e.target.value)}
+                        />
+                        <Input1
+                            type="number"
+                            input="Profit"
+                            id="Profit"
+                            value={profit !== null ? profit : ""}
+                            onChange={(
+                                e: React.ChangeEvent<HTMLInputElement>
+                            ) => setProfit(parseFloat(e.target.value))}
                         />
                     </div>
                     <div className="grow w-full flex items-center justify-center">

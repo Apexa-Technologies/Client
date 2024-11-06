@@ -10,7 +10,7 @@ export default function JournalPage() {
         <div className="flex pb-10 gap-4 h-screen flex-col overflow-y-scroll">
             <JournalPageTopBar />
             <div className="min-h-full h-fit flex flex-wrap gap-5 overflow-y-hidden">
-                <section className="w-3/4 flex flex-col gap-5">
+                <section className="w-4/6 flex flex-col gap-5">
                     <div className="h-fit bg-primary rounded-[2rem] flex flex-col p-5 pl-8 pr-8">
                         <div className="w-full flex h-1/2 justify-between items-center pt-10 pb-14">
                             <div className="w-fit">
