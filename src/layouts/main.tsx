@@ -1,9 +1,9 @@
 import page from "./main.module.scss";
 import Sidebar from "../components/sidebar/sidebar";
-import Topbar from "../components/topbar/topbar";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import { getUser } from "../api/api";
+import Topbar from "../components/topbar/topbar";
 
 export default function Layout() {
     const navigate = useNavigate();
