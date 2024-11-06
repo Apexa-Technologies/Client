@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button2 from "../../components/inputs/button2";
 import Input2 from "../../components/inputs/input2";
-import JournalPageTopBar from "../../components/topbar/journal/journal";
+import JournalPageTopBar from "./components/topbar/journal";
 
 export default function JournalPage() {
     const [title, setTitle] = useState("Untitled Document");

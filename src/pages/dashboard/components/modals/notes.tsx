@@ -1,12 +1,12 @@
 import { useState } from "react";
-import close from "../../../assets/close.svg";
-import Input1 from "../../../components/inputs/input1";
-import TextBox1 from "../../../components/inputs/textbox1";
-import Button1 from "../../../components/inputs/button1";
+import close from "../../../../assets/close.svg";
+import Input1 from "../../../../components/inputs/input1";
+import TextBox1 from "../../../../components/inputs/textbox1";
+import Button1 from "../../../../components/inputs/button1";
 import { motion } from "framer-motion";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
-import { postQuickNotes } from "../../../api/api";
+import { postQuickNotes } from "../../../../api/api";
 
 export default function NewNotesModal(props: any) {
     const queryClient = useQueryClient();

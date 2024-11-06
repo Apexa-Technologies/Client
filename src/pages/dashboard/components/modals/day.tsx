@@ -1,4 +1,4 @@
-import close from "../../../assets/close.svg";
+import close from "../../../../assets/close.svg";
 
 export default function DayModal(props: any) {
     return (

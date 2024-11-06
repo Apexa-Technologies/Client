@@ -1,10 +1,10 @@
-import Calculator from "./widgets/calculator/calculator";
-import CurrentDay from "./widgets/current/currentDay";
-import Days from "./widgets/days/days";
-import Equity from "./widgets/equity/equity";
-import Notes from "./widgets/notes/notes";
-import Trades from "./widgets/trades/trades";
-import DashboardTopbar from "../../components/topbar/dashboard/dashboard";
+import Calculator from "./components/widgets/calculator/calculator";
+import CurrentDay from "./components/widgets/current/currentDay";
+import Days from "./components/widgets/days/days";
+import Equity from "./components/widgets/equity/equity";
+import Notes from "./components/widgets/notes/notes";
+import Trades from "./components/widgets/trades/trades";
+import DashboardTopbar from "./components/topbar/dashboard";
 
 export default function DashboardPage() {
     return (

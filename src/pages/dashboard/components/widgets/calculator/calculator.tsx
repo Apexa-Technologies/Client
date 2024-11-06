@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Input1 from "../../../../components/inputs/input1";
-import Button2 from "../../../../components/inputs/button2";
+import Input1 from "../../../../../components/inputs/input1";
+import Button2 from "../../../../../components/inputs/button2";
 
 export default function Calculator() {
     const [entry, setEntry] = useState<number | null>(null);

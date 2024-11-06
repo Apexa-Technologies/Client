@@ -1,8 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
-import { getLast5Days } from "../../../../api/api";
+import { getLast5Days } from "../../../../../api/api";
 import { useState } from "react";
 import DayModal from "../../modals/day";
-import Dots from "../../../../components/inputs/dots";
+import Dots from "../../../../../components/inputs/dots";
 
 export default function Days() {
     const [isModalOpen, setModal] = useState(false);

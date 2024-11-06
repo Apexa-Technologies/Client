@@ -1,9 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { RoutePath } from "../../../constants/path";
-import Button2 from "../../inputs/button2";
-import Search1 from "../../inputs/search1";
-import settings from "../../../assets/settings.svg";
-import help from "../../../assets/help.svg";
+import { RoutePath } from "../../../../constants/path";
+import Button2 from "../../../../components/inputs/button2";
+import Search1 from "../../../../components/inputs/search1";
+import settings from "../../../../assets/settings.svg";
+import help from "../../../../assets/help.svg";
 
 export default function JournalPageTopBar() {
     const navigate = useNavigate();

@@ -1,4 +1,4 @@
-import close from "../../../assets/close.svg";
+import close from "../../../../assets/close.svg";
 import { motion } from "framer-motion";
 export default function TradeModal(props: any) {
     return (

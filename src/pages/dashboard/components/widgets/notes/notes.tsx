@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
-import Button2 from "../../../../components/inputs/button2";
-import Dots from "../../../../components/inputs/dots";
-import { getQuickNotes } from "../../../../api/api";
+import Button2 from "../../../../../components/inputs/button2";
+import Dots from "../../../../../components/inputs/dots";
+import { getQuickNotes } from "../../../../../api/api";
 import { useState } from "react";
 import NewNotesModal from "../../modals/notes";
-import * as userTypes from "../../../../types/user";
+import * as userTypes from "../../../../../types/user";
 import { AnimatePresence } from "framer-motion";
 
 export default function Notes() {

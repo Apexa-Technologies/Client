@@ -1,10 +1,10 @@
 import { useState } from "react";
 import NewTradePanel from "../../modals/newTrade";
-import { getTrades } from "../../../../api/api";
+import { getTrades } from "../../../../../api/api";
 import { useQuery } from "@tanstack/react-query";
 import TradeModal from "../../modals/trade";
-import Dots from "../../../../components/inputs/dots";
-import * as userTypes from "../../../../types/user";
+import Dots from "../../../../../components/inputs/dots";
+import * as userTypes from "../../../../../types/user";
 import { AnimatePresence } from "framer-motion";
 
 export default function Trades() {

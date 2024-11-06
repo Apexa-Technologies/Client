@@ -1,5 +1,5 @@
-import Dots from "../../../../components/inputs/dots";
-import Bubble from "../../../../components/small/bubble";
+import Dots from "../../../../../components/inputs/dots";
+import Bubble from "../../../../../components/small/bubble";
 
 export default function CurrentDay() {
     return (

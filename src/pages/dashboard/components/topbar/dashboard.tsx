@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import settings from "../../../assets/settings.svg";
-import help from "../../../assets/help.svg";
-import page from "./topbar.module.scss";
+import settings from "../../../../assets/settings.svg";
+import help from "../../../../assets/help.svg";
 import { useNavigate } from "react-router-dom";
-import { RoutePath } from "../../../constants/path";
+import { RoutePath } from "../../../../constants/path";
 import { useQuery } from "@tanstack/react-query";
-import { getUser } from "../../../api/api";
+import { getUser } from "../../../../api/api";
 import toast from "react-hot-toast";
-import * as userTypes from "../../../types/user";
+import * as userTypes from "../../../../types/user";
 
 export default function DashboardTopbar() {
     const navigate = useNavigate();
@@ -30,15 +29,16 @@ export default function DashboardTopbar() {
 
     function Topbar_Buttons() {
         return (
-            <div className={page.Topbar_Buttons}>
+            <div className="flex gap-3">
                 <button
+                    className="p-2.5 rounded-full hover:opacity-70 transition-all bg-darkprimary/60"
                     onClick={() =>
                         navigate(RoutePath.Settings, { replace: true })
                     }
                 >
                     <img src={settings} />
                 </button>
-                <button>
+                <button className="p-2.5 rounded-full hover:opacity-70 transition-all bg-darkprimary/60">
                     <img src={help} />
                 </button>
             </div>
@@ -85,7 +85,7 @@ export default function DashboardTopbar() {
         };
 
         return (
-            <p className={page.Topbar_Date}>
+            <p className="text-3xl">
                 {weekday}, {date.getDate()}
                 {nth(date.getDate())}
             </p>
@@ -94,7 +94,7 @@ export default function DashboardTopbar() {
 
     if (isFetching || isPending) {
         return (
-            <div className={page.Topbar_Wrapper}>
+            <div className="h-16 relative rounded-full bg-primary flex items-center p-5 justify-between">
                 <h1>loading</h1>
             </div>
         );
@@ -106,12 +106,14 @@ export default function DashboardTopbar() {
 
     if (data && !isFetching && !isPending)
         return (
-            <div className={page.Topbar_Wrapper}>
-                <p className={page.Welcome_Message}>
+            <div className="h-16 relative rounded-full bg-primary flex items-center p-5 justify-between">
+                <p className="text-3xl font-normal">
                     Welcome Back, {data.firstName}!
                 </p>
-                <p className={page.Title}>Apexa Journal</p>
-                <div className={page.Topbar_Right}>
+                <p className="text-3xl absolute left-2/4 -translate-x-2/4">
+                    Apexa Journal
+                </p>
+                <div className="flex items-center gap-10">
                     <Topbar_Date />
                     <Topbar_Buttons />
                 </div>

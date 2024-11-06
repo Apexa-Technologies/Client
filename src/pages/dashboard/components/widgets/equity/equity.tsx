@@ -1,5 +1,5 @@
-import EquityChart from "../../charts/EquityChart";
-import Bubble from "../../../../components/small/bubble";
+import EquityChart from "../../../charts/EquityChart";
+import Bubble from "../../../../../components/small/bubble";
 
 export default function Equity() {
     return (
