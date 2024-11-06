@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import Button2 from "../../../inputs/button2";
-import Dots from "../../../inputs/dots";
+import Button2 from "../../../../components/inputs/button2";
+import Dots from "../../../../components/inputs/dots";
 import { getQuickNotes } from "../../../../api/api";
 import { useState } from "react";
 import NewNotesModal from "../../modals/notes";

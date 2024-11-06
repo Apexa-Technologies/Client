@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Input1 from "../../../inputs/input1";
-import Button2 from "../../../inputs/button2";
+import Input1 from "../../../../components/inputs/input1";
+import Button2 from "../../../../components/inputs/button2";
 
 export default function Calculator() {
     const [entry, setEntry] = useState<number | null>(null);
@@ -37,7 +37,7 @@ export default function Calculator() {
                     <Input1
                         type="number"
                         input="Risk Amount"
-                        value={risk !== null ? stop : ""}
+                        value={risk !== null ? risk : ""}
                         id="RiskCalculator"
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                             setRisk(parseFloat(e.target.value))

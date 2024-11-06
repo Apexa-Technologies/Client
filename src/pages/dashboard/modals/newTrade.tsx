@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import close from "../../../assets/close.svg";
-import Input1 from "../../inputs/input1";
-import TextBox1 from "../../inputs/textbox1";
-import Button1 from "../../inputs/button1";
+import Input1 from "../../../components/inputs/input1";
+import TextBox1 from "../../../components/inputs/textbox1";
+import Button1 from "../../../components/inputs/button1";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { postTrades } from "../../../api/api";
 import toast from "react-hot-toast";

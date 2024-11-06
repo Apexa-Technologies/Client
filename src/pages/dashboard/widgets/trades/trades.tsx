@@ -3,7 +3,7 @@ import NewTradePanel from "../../modals/newTrade";
 import { getTrades } from "../../../../api/api";
 import { useQuery } from "@tanstack/react-query";
 import TradeModal from "../../modals/trade";
-import Dots from "../../../inputs/dots";
+import Dots from "../../../../components/inputs/dots";
 import * as userTypes from "../../../../types/user";
 import { AnimatePresence } from "framer-motion";
 
