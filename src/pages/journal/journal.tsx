@@ -16,11 +16,6 @@ export default function JournalPage() {
     });
 
     const navigate = useNavigate();
-
-    const currentTime = new Date();
-    const todaysMonth = currentTime.getMonth() + 1;
-    const today = currentTime.getDate();
-
     function Topbar_Buttons() {
         return (
             <div className="flex gap-3">
