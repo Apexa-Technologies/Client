@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getLast5Days } from "../../../../../api/api";
+import { getDays } from "../../../../../api/api";
 import { useState } from "react";
 import DayModal from "../../modals/day";
 import Dots from "../../../../../components/inputs/dots";
@@ -9,8 +9,8 @@ export default function Days() {
     const [selectedDay, setDay] = useState(null);
 
     const { isPending, error, data, isFetching }: any = useQuery({
-        queryKey: ["5Days"],
-        queryFn: getLast5Days,
+        queryKey: ["Days"],
+        queryFn: getDays,
     });
 
     function formatDate(n: any) {

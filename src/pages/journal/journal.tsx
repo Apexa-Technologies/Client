@@ -6,163 +6,20 @@ import Button2 from "../../components/inputs/button2";
 import Search1 from "../../components/inputs/search1";
 import settings from "../../assets/settings.svg";
 import help from "../../assets/help.svg";
+import { useQuery } from "@tanstack/react-query";
+import { getDays } from "../../api/api";
 
 export default function JournalPage() {
-    const data = [
-        {
-            day: 15,
-            month: 11,
-            data: {
-                title: "Untitled Document",
-            },
-        },
-        {
-            day: 16,
-            month: 11,
-            data: {
-                title: "Untitled Document",
-            },
-        },
-        {
-            day: 17,
-            month: 11,
-            data: {
-                title: "Untitled Document",
-            },
-        },
-        {
-            day: 18,
-            month: 11,
-            data: {
-                title: "Untitled Document",
-            },
-        },
-        {
-            day: 19,
-            month: 11,
-            data: {
-                title: "Untitled Document",
-            },
-        },
-        {
-            day: 20,
-            month: 11,
-            data: {
-                title: "Untitled Document",
-            },
-        },
-        {
-            day: 21,
-            month: 11,
-            data: {
-                title: "Untitled Document",
-            },
-        },
-        {
-            day: 22,
-            month: 11,
-            data: {
-                title: "Untitled Document",
-            },
-        },
-        {
-            day: 23,
-            month: 11,
-            data: {
-                title: "Untitled Document",
-            },
-        },
-        {
-            day: 24,
-            month: 11,
-            data: {
-                title: "Monday NY Bull Open",
-                journal: "test test test test",
-                trades: [
-                    {
-                        entry: 123,
-                        stop: 123,
-                        take: 123,
-                        riskReward: 0,
-                        profit: 250,
-                        equity: 10250,
-                        time: "Wed Nov 06 2024 02:18:07 GMT-0800 (Pacific Standard Time)",
-                        pair: "XAUUSD",
-                        notes: "",
-                        _id: "672b425fdb30f17c1a703bef",
-                    },
-                    {
-                        entry: 123,
-                        stop: 123,
-                        take: 123,
-                        riskReward: 0,
-                        profit: 500,
-                        equity: 10750,
-                        time: "Wed Nov 06 2024 02:18:12 GMT-0800 (Pacific Standard Time)",
-                        pair: "XAUUSD",
-                        notes: "",
-                        _id: "672b4264db30f17c1a703c0a",
-                    },
-
-                    {
-                        entry: 324,
-                        stop: 234,
-                        take: 234,
-                        riskReward: 0,
-                        profit: 234,
-                        equity: 10984,
-                        time: "Wed Nov 06 2024 23:00:20 GMT-0800 (Pacific Standard Time)",
-                        pair: "XAUUSD",
-                        notes: "",
-                        _id: "672c6584483d14946fe43e5b",
-                    },
-                ],
-            },
-        },
-        {
-            day: 25,
-            month: 11,
-            data: {
-                title: "Untitled Document",
-            },
-        },
-    ];
+    const { data } = useQuery({
+        queryKey: ["days"],
+        queryFn: getDays,
+    });
 
     const navigate = useNavigate();
 
     const currentTime = new Date();
     const todaysMonth = currentTime.getMonth() + 1;
     const today = currentTime.getDate();
-
-    const [title, setTitle] = useState("");
-
-    const [currentday, setCurrentDay] = useState({
-        title: "Untitled Document",
-        date: "",
-    });
-
-    useEffect(() => {
-        setTitle(currentday.title);
-    }, [currentday]);
-
-    function Days() {
-        return data.slice(-10).map((day: any) => {
-            return (
-                <div
-                    onClick={() => {
-                        setCurrentDay({
-                            title: day.data.title || "Untitled Document",
-                            date: "test",
-                        });
-                    }}
-                >
-                    <h1 className="text-2xl font-medium hover:opacity-100 opacity-75 cursor-pointer">
-                        {day.day}
-                    </h1>
-                </div>
-            );
-        });
-    }
 
     function Topbar_Buttons() {
         return (
@@ -181,6 +38,59 @@ export default function JournalPage() {
             </div>
         );
     }
+
+    function Days() {
+        if (data && data.days) {
+            return data.days.slice(-10).map((day: any) => {
+                return (
+                    <div
+                        onClick={() => {
+                            setCurrentDay(day);
+                        }}
+                    >
+                        <h1 className="text-2xl font-medium hover:opacity-100 opacity-75 cursor-pointer">
+                            {day.day}
+                        </h1>
+                    </div>
+                );
+            });
+        }
+    }
+
+    interface IDay {
+        day: number;
+        month: number;
+        date: string;
+        equity: number;
+        totalProfit: number;
+        journaldata: {
+            title: string;
+            journal: string;
+        };
+        trades: Array<{
+            entry: number;
+            stop: number;
+            take: number;
+            riskReward: number;
+            profit: number;
+            equity: number;
+            time: string;
+            pair: string;
+            notes: string;
+        }>;
+    }
+
+    const [currentday, setCurrentDay] = useState<IDay | undefined>();
+
+    const [title, setTitle] = useState<string>("Untitled Document");
+    const [journal, setJournal] = useState<string>("");
+
+    useEffect(() => {
+        if (currentday) {
+            setTitle(currentday.journaldata.title);
+            setJournal(currentday.journaldata.journal);
+        }
+    }, [currentday]);
 
     return (
         <div className="flex pb-10 gap-4 h-screen flex-col overflow-y-scroll">
@@ -210,10 +120,13 @@ export default function JournalPage() {
                                     ) => setTitle(e.target.value)}
                                 />
                             </div>
-                            <h1 className="text-4xl">{currentday.date}</h1>
+                            <h1 className="text-4xl">Aug, 6th</h1>
                         </div>
                         <hr></hr>
-                        <div className="w-full h-1/2 flex justify-end items-center">
+                        <div className="w-full h-1/2 flex justify-end gap-5 items-center">
+                            <div className="h-12 w-24 mt-4">
+                                <Button2 text="Save" />
+                            </div>
                             <div className="h-12 w-36 mt-4">
                                 <Button2 text="New Trade" />
                             </div>

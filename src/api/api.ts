@@ -12,7 +12,7 @@ export async function getTrades() {
         } else if (response.status === 403) {
             console.log("Forbidden");
         } else {
-            console.log("No Response from server or No Data");
+            console.log("No response from server or no data");
         }
     } catch (error) {
         console.log(error);
@@ -31,16 +31,16 @@ export async function postTrades(newTrade: any) {
         } else if (response.status === 403) {
             console.log("Forbidden");
         } else {
-            console.log("No Response from server or No Data");
+            console.log("No response from server or no data");
         }
     } catch (error) {
         console.log(error);
     }
 }
 
-export async function getLast5Days() {
+export async function getDays() {
     try {
-        const response = await axios.get("last5Days", {
+        const response = await axios.get("getDays", {
             headers: {
                 Authorization: localStorage.getItem("AUTH") || "",
             },
@@ -50,7 +50,7 @@ export async function getLast5Days() {
         } else if (response.status === 403) {
             console.log("Forbidden");
         } else {
-            console.log("No Response from server or No Data");
+            console.log("No response from server or no data");
         }
     } catch (error) {
         console.log(error);
