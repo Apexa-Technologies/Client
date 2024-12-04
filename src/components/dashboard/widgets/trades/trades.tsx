@@ -91,7 +91,7 @@ export default function Trades() {
                 </div>
                 <div
                     onClick={() => setIsModalOpen(true)}
-                    className="w-full bg-grey h-16 rounded-full flex justify-center items-center p-5 transition-all hover:translate-y-1 hover:opacity-60 cursor-pointer"
+                    className="w-full bg-purple2 h-16 rounded-full flex justify-center items-center p-5 transition-all hover:translate-y-1 hover:opacity-60 cursor-pointer"
                 >
                     <p className="text-2xl">Add New Trade</p>
                 </div>
