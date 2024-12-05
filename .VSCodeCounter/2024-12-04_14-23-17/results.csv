@@ -1,0 +1,68 @@
+"filename", "language", "CSS", "XML", "HTML", "JSON", "TypeScript JSX", "SCSS", "TypeScript", "Rust", "JavaScript", "comment", "blank", "total"
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\dist\assets\calulator-BT6sUfMS.svg", "XML", 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\dist\assets\index-B24nQ7bT.js", "JavaScript", 0, 0, 0, 0, 0, 0, 0, 0, 41, 52, 1, 94
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\dist\assets\index-Dq2-nsQc.css", "CSS", 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\dist\assets\settings-DBr9mgm5.svg", "XML", 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\dist\index.html", "HTML", 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 3, 16
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\index.html", "HTML", 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 2, 14
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\package.json", "JSON", 0, 0, 0, 37, 0, 0, 0, 0, 0, 0, 1, 38
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src-tauri\build.rs", "Rust", 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 4
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src-tauri\src\main.rs", "Rust", 0, 0, 0, 0, 0, 0, 0, 6, 0, 2, 3, 11
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src-tauri\tauri.conf.json", "JSON", 0, 0, 0, 45, 0, 0, 0, 0, 0, 0, 1, 46
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\App.tsx", "TypeScript JSX", 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 5, 17
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\Main.tsx", "TypeScript JSX", 0, 0, 0, 0, 16, 0, 0, 0, 0, 0, 3, 19
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\Wrapper.tsx", "TypeScript JSX", 0, 0, 0, 0, 12, 0, 0, 0, 0, 0, 2, 14
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\api\api.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 55, 0, 0, 0, 4, 59
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\assets\arrow.svg", "XML", 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\assets\calender.svg", "XML", 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\assets\calulator.svg", "XML", 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\assets\close.svg", "XML", 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\assets\dots.svg", "XML", 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\assets\flag.svg", "XML", 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\assets\help.svg", "XML", 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\assets\home.svg", "XML", 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\assets\journal.svg", "XML", 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\assets\news.svg", "XML", 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\assets\settings.svg", "XML", 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 1, 4
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\charts\EquityChart.tsx", "TypeScript JSX", 0, 0, 0, 0, 115, 0, 0, 0, 0, 1, 12, 128
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\dashboard\modals\day.tsx", "TypeScript JSX", 0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 2, 20
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\dashboard\modals\newTrade.tsx", "TypeScript JSX", 0, 0, 0, 0, 110, 0, 0, 0, 0, 0, 5, 115
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\dashboard\modals\trade.tsx", "TypeScript JSX", 0, 0, 0, 0, 18, 0, 0, 0, 0, 0, 2, 20
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\dashboard\widgets\calculator\calculator.tsx", "TypeScript JSX", 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 1, 8
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\dashboard\widgets\current\currentDay.tsx", "TypeScript JSX", 0, 0, 0, 0, 22, 0, 0, 0, 0, 0, 2, 24
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\dashboard\widgets\days\days.tsx", "TypeScript JSX", 0, 0, 0, 0, 107, 0, 0, 0, 0, 0, 9, 116
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\dashboard\widgets\equity\equity.module.scss", "SCSS", 0, 0, 0, 0, 0, 21, 0, 0, 0, 0, 3, 24
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\dashboard\widgets\equity\equity.tsx", "TypeScript JSX", 0, 0, 0, 0, 21, 0, 0, 0, 0, 0, 3, 24
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\dashboard\widgets\notes\notes.tsx", "TypeScript JSX", 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 2, 25
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\dashboard\widgets\trades\trades.module.scss", "SCSS", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 4
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\dashboard\widgets\trades\trades.tsx", "TypeScript JSX", 0, 0, 0, 0, 105, 0, 0, 0, 0, 0, 9, 114
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\inputs\button1.tsx", "TypeScript JSX", 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 1, 9
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\inputs\button2.tsx", "TypeScript JSX", 0, 0, 0, 0, 7, 0, 0, 0, 0, 0, 1, 8
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\inputs\dots.tsx", "TypeScript JSX", 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 2, 10
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\inputs\input1.module.scss", "SCSS", 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 5
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\inputs\input1.tsx", "TypeScript JSX", 0, 0, 0, 0, 23, 0, 0, 0, 0, 0, 3, 26
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\inputs\textbox1.tsx", "TypeScript JSX", 0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 3, 27
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\sidebar\sidebar.module.scss", "SCSS", 0, 0, 0, 0, 0, 23, 0, 0, 0, 0, 6, 29
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\sidebar\sidebar.tsx", "TypeScript JSX", 0, 0, 0, 0, 61, 0, 0, 0, 0, 0, 5, 66
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\small\bubble.tsx", "TypeScript JSX", 0, 0, 0, 0, 17, 0, 0, 0, 0, 0, 4, 21
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\topbar\topbar.module.scss", "SCSS", 0, 0, 0, 0, 0, 22, 0, 0, 0, 0, 3, 25
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\components\topbar\topbar.tsx", "TypeScript JSX", 0, 0, 0, 0, 72, 0, 0, 0, 0, 0, 7, 79
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\constants\path.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 10, 0, 0, 0, 1, 11
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\index.scss", "SCSS", 0, 0, 0, 0, 0, 24, 0, 0, 0, 0, 3, 27
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\layouts\main.module.scss", "SCSS", 0, 0, 0, 0, 0, 12, 0, 0, 0, 0, 3, 15
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\layouts\main.tsx", "TypeScript JSX", 0, 0, 0, 0, 26, 0, 0, 0, 0, 0, 2, 28
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\pages\calculator\calculator.module.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\pages\calculator\calculator.tsx", "TypeScript JSX", 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 2, 10
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\pages\calender\calender.tsx", "TypeScript JSX", 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 6
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\pages\dashboard\Dashboard.module.scss", "SCSS", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 1, 4
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\pages\dashboard\Dashboard.tsx", "TypeScript JSX", 0, 0, 0, 0, 38, 0, 0, 0, 0, 6, 4, 48
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\pages\journal\journal.module.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\pages\journal\journal.tsx", "TypeScript JSX", 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 2, 10
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\pages\login\login.module.scss", "SCSS", 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\pages\login\login.tsx", "TypeScript JSX", 0, 0, 0, 0, 65, 0, 0, 0, 0, 0, 6, 71
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\pages\news\news.module.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\pages\news\news.tsx", "TypeScript JSX", 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 2, 10
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\pages\setup\setup.module.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\pages\setup\setup.tsx", "TypeScript JSX", 0, 0, 0, 0, 130, 0, 0, 0, 0, 0, 13, 143
+"c:\Users\Antik\OneDrive\Documents\GitHub\Client\src\routes\index.tsx", "TypeScript JSX", 0, 0, 0, 0, 42, 0, 0, 0, 0, 0, 2, 44
+"Total", "-", 1, 40, 25, 82, 1137, 116, 65, 9, 41, 61, 171, 1748

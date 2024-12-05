@@ -16,7 +16,7 @@ export default function Trades() {
 
     function openModal(trade: any) {
         setTrade(trade);
-        setIsModalOpen(true);
+        setIsTradeOpen(true);
     }
 
     function displayTrades() {
@@ -30,23 +30,23 @@ export default function Trades() {
                             key={trade._id}
                             onClick={() => openModal(trade)}
                             className={`w-full bg-gradient-to-r relative h-16 rounded-full flex justify-between items-center p-5 transition-all hover:translate-y-0.5 hover:opacity-60 cursor-pointer ${
-                                trade.Profit > 0
+                                trade.profit > 0
                                     ? "from-cyan60 to-green60"
                                     : "from-red60 to-pink60"
                             }`}
                         >
-                            <p className="text-3xl">{trade.Pair}</p>
+                            <p className="text-3xl">{trade.pair}</p>
                             <p className="text-2xl absolute left-1/2 transform -translate-x-1/2 hover:underline">
                                 View
                             </p>
                             <p
                                 className={`font-medium text-4xl ${
-                                    trade.Profit > 0
+                                    trade.profit > 0
                                         ? "text-green-2"
                                         : "text-pink-2"
                                 }`}
                             >
-                                ${trade.Profit.toLocaleString()}
+                                ${trade.profit.toLocaleString()}
                             </p>
                         </div>
                     );
@@ -84,16 +84,18 @@ export default function Trades() {
 
     if (data) {
         return (
-            <div className="w-full flex flex-col p-5">
+            <div className="w-full flex flex-col p-5 h-full">
                 <h1 className="text-4xl">Recent Trades</h1>
-                <div className="flex flex-col gap-3 mt-3 overflow-hidden mb-3">
-                    {displayTrades()}
-                </div>
-                <div
-                    onClick={() => setIsModalOpen(true)}
-                    className="w-full bg-purple2 h-16 rounded-full flex justify-center items-center p-5 transition-all hover:translate-y-1 hover:opacity-60 cursor-pointer"
-                >
-                    <p className="text-2xl">Add New Trade</p>
+                <div className="flex flex-col h-full grow justify-between">
+                    <div className="flex flex-col gap-3 mt-3 overflow-hidden mb-3">
+                        {displayTrades()}
+                    </div>
+                    <div
+                        onClick={() => setIsModalOpen(true)}
+                        className="w-full bg-purple2 h-16 rounded-full flex justify-center items-center p-5 transition-all hover:translate-y-1 hover:opacity-60 cursor-pointer"
+                    >
+                        <p className="text-2xl">Add New Trade</p>
+                    </div>
                 </div>
 
                 {isModalOpen && (
