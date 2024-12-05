@@ -6,5 +6,9 @@ export enum RoutePath {
     Calender = "calender",
     Setup = "setup",
     Login = "login",
-    User = "user"
+    User = "user",
+    Settings = "settings",
+    Account = "account",
+    General = "general",
+    Security = "security",
 }

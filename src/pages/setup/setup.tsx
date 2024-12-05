@@ -57,7 +57,7 @@ export default function SetupPage() {
                     Let's Get You Set Up!
                 </h2>
 
-                <div className="w-full flex flex-col items-center mt-8">
+                <div className="w-full flex flex-col items-center mt-8 gap-5">
                     {step === 1 && (
                         <>
                             <Input1

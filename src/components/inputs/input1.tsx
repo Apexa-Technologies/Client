@@ -11,7 +11,7 @@ interface Input1Props {
 
 const Input1 = React.memo((props: Input1Props) => {
     return (
-        <div className="w-3/4 h-12 m-3 bg-darkprimary rounded-full flex pl-4 pr-4 focus-within:border-2 focus-within:border-secondary/60">
+        <div className="w-full h-12 bg-darkprimary rounded-full flex pl-4 pr-4 focus-within:border-2 focus-within:border-secondary/60">
             <input
                 type={props.type}
                 placeholder={props.input}

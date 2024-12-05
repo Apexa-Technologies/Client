@@ -4,10 +4,10 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 export default function Wrapper() {
     return (
-        <>
+        <div className="h-full w-full">
             <Outlet />
             <Toaster position="bottom-right" />
             <ReactQueryDevtools initialIsOpen={false} />
-        </>
+        </div>
     );
 }

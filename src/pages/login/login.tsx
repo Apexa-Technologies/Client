@@ -38,7 +38,7 @@ export default function LoginPage() {
             <div className="w-1/4 h-fit bg-gradient-to-b from-primary to-darkprimary rounded-3xl flex flex-col items-center p-8 pb-3 border-2 border-secondary/60">
                 <h1 className="text-5xl font-semibold">Apexa Journal</h1>
                 <h2 className="mt-2 text-2xl opacity-80">Welcome Back!</h2>
-                <div className="w-full flex flex-col items-center mt-12">
+                <div className="w-full flex flex-col gap-5 items-center mt-12">
                     <Input1
                         type="text"
                         input="Email"

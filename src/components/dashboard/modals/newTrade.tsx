@@ -38,7 +38,7 @@ export default function NewTradePanel(props: any) {
     }
 
     return (
-        <div className="fixed bg-black w-screen h-screen top-0 left-0 z-20 backdrop-blur flex items-center justify-center">
+        <div className="bg-[#000]/30 fixed bg-black w-screen h-screen top-0 left-0 z-20 backdrop-blur flex items-center justify-center">
             <div className="bg-primary rounded-3xl w-4/6 h-1/2 flex flex-col p-6 pb-16">
                 <div className="w-full flex relative mb-14">
                     <h1 className="text-center text-4xl font-semibold">

@@ -31,8 +31,8 @@ export default function Trades() {
                             onClick={() => openModal(trade)}
                             className={`w-full bg-gradient-to-r relative h-16 rounded-full flex justify-between items-center p-5 transition-all hover:translate-y-0.5 hover:opacity-60 cursor-pointer ${
                                 trade.profit > 0
-                                    ? "from-bullish1/60 to-bullish2/60"
-                                    : "from-bearish1/60 to-bearish2/60"
+                                    ? "from-bullish1/80 to-bullish2/80"
+                                    : "from-bearish1/80 to-bearish2/80"
                             }`}
                         >
                             <p className="text-3xl">{trade.pair}</p>

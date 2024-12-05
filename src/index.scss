@@ -13,6 +13,11 @@
     scrollbar-width: none;
 }
 
+#root {
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
 .theme1 {
     --primary: 75, 1, 149;
     --darkprimary: 43, 1, 109;

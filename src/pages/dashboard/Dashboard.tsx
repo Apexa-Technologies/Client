@@ -11,13 +11,13 @@ export default function DashboardPage() {
             {/* Left Section */}
             <section className="h-full w-4/6 flex flex-col gap-5">
                 {/* Equity */}
-                <div className="bg-primary w-full h-1/2 rounded-3xl overflow-hidden max-h-96 min-h-56">
+                <div className="bg-primary w-full rounded-3xl overflow-hidden min-h-[28rem]">
                     <Equity />
                 </div>
 
                 {/* Left Bottom */}
-                <section className="flex gap-5 grow">
-                    <div className="bg-primary w-1/2 rounded-3xl">
+                <section className="flex gap-5">
+                    <div className="bg-primary w-1/2 h-fit rounded-3xl">
                         <Notes />
                     </div>
                     <div className="flex flex-col gap-5 w-1/2">

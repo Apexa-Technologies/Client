@@ -9,6 +9,10 @@ import CalculatorPage from "../pages/calculator/calculator";
 import NewsPage from "../pages/news/news";
 import JournalPage from "../pages/journal/journal";
 import Wrapper from "../Wrapper";
+import SettingsPage from "../pages/settings/settings";
+import AccountSubPage from "../pages/settings/subpages/account";
+import GeneralSubPage from "../pages/settings/subpages/general";
+import SecuritySubPage from "../pages/settings/subpages/security";
 
 export default function AppRoutes() {
     return (
@@ -17,6 +21,20 @@ export default function AppRoutes() {
                 <Route element={<Wrapper />}>
                     <Route path={RoutePath.Setup} element={<SetupPage />} />
                     <Route path={RoutePath.Login} element={<LoginPage />} />
+                    <Route path={RoutePath.Settings} element={<SettingsPage />}>
+                        <Route
+                            path={RoutePath.Account}
+                            element={<AccountSubPage />}
+                        />
+                        <Route
+                            path={RoutePath.General}
+                            element={<GeneralSubPage />}
+                        />
+                        <Route
+                            path={RoutePath.Security}
+                            element={<SecuritySubPage />}
+                        />
+                    </Route>
                     <Route element={<Layout />}>
                         <Route
                             path={RoutePath.Dashboard}
