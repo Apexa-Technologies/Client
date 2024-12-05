@@ -51,7 +51,7 @@ export default function SetupPage() {
 
     return (
         <div className="h-screen w-full flex justify-center items-center">
-            <div className="w-1/4 h-fit bg-gradient-to-b from-purple to-darkpurple rounded-3xl flex flex-col items-center p-8 pb-3 border-2 border-pink60">
+            <div className="w-1/4 h-fit bg-gradient-to-b from-primary to-darkprimary rounded-3xl flex flex-col items-center p-8 pb-3 border-2 border-secondary/60">
                 <h1 className="text-5xl font-semibold">Apexa Journal</h1>
                 <h2 className="mt-4 text-2xl opacity-80">
                     Let's Get You Set Up!

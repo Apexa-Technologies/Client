@@ -31,21 +31,15 @@ export default function Trades() {
                             onClick={() => openModal(trade)}
                             className={`w-full bg-gradient-to-r relative h-16 rounded-full flex justify-between items-center p-5 transition-all hover:translate-y-0.5 hover:opacity-60 cursor-pointer ${
                                 trade.profit > 0
-                                    ? "from-cyan60 to-green60"
-                                    : "from-red60 to-pink60"
+                                    ? "from-bullish1/60 to-bullish2/60"
+                                    : "from-bearish1/60 to-bearish2/60"
                             }`}
                         >
                             <p className="text-3xl">{trade.pair}</p>
                             <p className="text-2xl absolute left-1/2 transform -translate-x-1/2 hover:underline">
                                 View
                             </p>
-                            <p
-                                className={`font-medium text-4xl ${
-                                    trade.profit > 0
-                                        ? "text-green-2"
-                                        : "text-pink-2"
-                                }`}
-                            >
+                            <p className={`font-medium text-4xl`}>
                                 ${trade.profit.toLocaleString()}
                             </p>
                         </div>
@@ -92,7 +86,7 @@ export default function Trades() {
                     </div>
                     <div
                         onClick={() => setIsModalOpen(true)}
-                        className="w-full bg-purple2 h-16 rounded-full flex justify-center items-center p-5 transition-all hover:translate-y-1 hover:opacity-60 cursor-pointer"
+                        className="w-full bg-secondary h-16 rounded-full flex justify-center items-center p-5 transition-all hover:translate-y-1 hover:opacity-60 cursor-pointer"
                     >
                         <p className="text-2xl">Add New Trade</p>
                     </div>

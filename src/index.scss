@@ -13,14 +13,48 @@
     scrollbar-width: none;
 }
 
+.theme1 {
+    --primary: 75, 1, 149;
+    --darkprimary: 43, 1, 109;
+    --secondary: 174, 1, 255;
+    --bearish1: 210, 0, 50;
+    --bearish2: 220, 0, 185;
+    --bullish1: 9, 232, 134;
+    --bullish2: 0, 207, 220;
+    --darkbullish: 0, 138, 77;
+    --darkbearish: 141, 0, 34;
+    --bg1: #200054;
+    --bg2: #2e0053;
+}
+.theme2 {
+    --primary: 38, 33, 63;
+    --darkprimary: 29, 25, 48;
+    --secondary: 34, 36, 175;
+    --bearish1: 210, 0, 150;
+    --bearish2: 220, 0, 215;
+    --bullish1: 0, 215, 220;
+    --bullish2: 0, 180, 210;
+    --darkbullish: 0, 123, 128;
+    --darkbearish: 125, 0, 88;
+    --bg1: #100e40;
+    --bg2: #1a1320;
+}
+.theme3 {
+    --primary: 38, 33, 63;
+    --darkprimary: 29, 25, 48;
+    --secondary: 34, 36, 175;
+    --bearish1: 210, 0, 150;
+    --bearish2: 220, 0, 215;
+    --bullish1: 0, 215, 220;
+    --bullish2: 0, 180, 210;
+    --bg1: #100e40;
+    --bg2: #1a1320;
+}
+
 body {
     min-width: 100vw;
     min-height: 100vh;
     background: rgb(32, 0, 84);
-    background: linear-gradient(
-        128deg,
-        rgba(32, 0, 84, 1) 0%,
-        rgba(46, 0, 83, 1) 100%
-    );
+    background: linear-gradient(128deg, var(--bg1) 0%, var(--bg2) 100%);
     overflow: hidden;
 }

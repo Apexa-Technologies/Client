@@ -4,7 +4,7 @@ import TextBox1 from "../../inputs/textbox1";
 export default function TradeModal(props: any) {
     return (
         <div className="bg-grey top-0 left-0 z-30 flex items-center justify-center fixed h-screen w-screen backdrop-blur">
-            <div className="rounded-3xl bg-purple min-h-24 w-5/12 flex flex-col p-5 pb-10">
+            <div className="rounded-3xl bg-primary min-h-24 w-5/12 flex flex-col p-5 pb-10">
                 <div className="text-3xl flex justify-between">
                     <h1>TradeID: {props.trade._id}</h1>
                     <div onClick={props.close}>
@@ -49,7 +49,7 @@ export default function TradeModal(props: any) {
                     </div>
                     <div className="mt-5 mb-5">
                         <h1 className="text-4xl mb-5">Notes</h1>
-                        <div className="rounded-3xl bg-darkpurple2 w-full h-48 flex justify-center items-center p-10">
+                        <div className="rounded-3xl bg-darkprimary w-full h-48 flex justify-center items-center p-10">
                             <p className="text-2xl">{props.trade?.notes}</p>
                         </div>
                     </div>

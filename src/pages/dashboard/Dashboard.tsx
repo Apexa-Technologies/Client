@@ -11,20 +11,20 @@ export default function DashboardPage() {
             {/* Left Section */}
             <section className="h-full w-4/6 flex flex-col gap-5">
                 {/* Equity */}
-                <div className="bg-purple w-full h-1/2 rounded-3xl overflow-hidden max-h-96 min-h-56">
+                <div className="bg-primary w-full h-1/2 rounded-3xl overflow-hidden max-h-96 min-h-56">
                     <Equity />
                 </div>
 
                 {/* Left Bottom */}
                 <section className="flex gap-5 grow">
-                    <div className="bg-purple w-1/2 rounded-3xl">
+                    <div className="bg-primary w-1/2 rounded-3xl">
                         <Notes />
                     </div>
                     <div className="flex flex-col gap-5 w-1/2">
-                        <div className="bg-purple w-full h-fit rounded-3xl">
+                        <div className="bg-primary w-full h-fit rounded-3xl">
                             <CurrentDay />
                         </div>
-                        <div className="bg-purple w-full h-1/2 rounded-3xl">
+                        <div className="bg-primary w-full h-1/2 rounded-3xl">
                             <Calculator />
                         </div>
                     </div>
@@ -34,11 +34,11 @@ export default function DashboardPage() {
             {/* Right Section */}
             <section className="grow flex flex-col gap-5">
                 {/* Trades */}
-                <div className="bg-purple rounded-3xl w-full grow">
+                <div className="bg-primary rounded-3xl w-full grow">
                     <Trades />
                 </div>
                 {/* Days */}
-                <div className="bg-purple rounded-3xl h-fit first:w-full grow">
+                <div className="bg-primary rounded-3xl h-fit first:w-full grow">
                     <Days />
                 </div>
             </section>

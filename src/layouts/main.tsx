@@ -5,14 +5,13 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 export default function Layout() {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     useEffect(() => {
         let key = localStorage.getItem("AUTH");
-        if(!key)
-        {
-            navigate("login")
+        if (!key) {
+            navigate("login");
         }
-    })
+    });
     return (
         <div className={page.page}>
             <Sidebar />

@@ -36,8 +36,8 @@ export default function Days() {
                             onClick={() => openModal(day)}
                             className={`w-full h-16 flex justify-between relative items-center bg-gradient-to-r rounded-3xl hover:translate-y-0.5 p-5 hover:opacity-60 cursor-pointer transition-all ${
                                 day.profit > 0
-                                    ? "from-green3 to-cyan2"
-                                    : "from-red2 to-pink3"
+                                    ? "from-bullish2 to-bullish1"
+                                    : "from-bearish1 to-bearish2"
                             }`}
                         >
                             <div className="flex items-end gap-1">
@@ -50,13 +50,13 @@ export default function Days() {
                                 View
                             </p>
                             <div
-                                className={` rounded-3xl w-16 flex items-center justify-center h-11 ${
+                                className={`pl-2 pr-2 rounded-3xl w-16 flex items-center justify-center h-11 ${
                                     day.profit > 0
-                                        ? "bg-darkgreen"
-                                        : "bg-darkred"
+                                        ? "bg-darkbullish/50"
+                                        : "bg-darkbearish/50"
                                 }`}
                             >
-                                <h1 className="text-lg">{day.profit}%</h1>
+                                <h1 className="text-lg">3.2{day.profit}%</h1>
                             </div>
                         </div>
                     );
