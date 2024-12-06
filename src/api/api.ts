@@ -94,3 +94,22 @@ export async function getQuickNotes() {
         console.log(error);
     }
 }
+
+export async function postQuickNotes(newNote: any) {
+    try {
+        const response = await axios.post("quicknotes", newNote, {
+            headers: {
+                Authorization: localStorage.getItem("AUTH"),
+            },
+        });
+        if (response.status === 200) {
+            return response.data;
+        } else if (response.status === 403) {
+            console.log("Forbidden");
+        } else {
+            console.log("No Response from server or No Data");
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}

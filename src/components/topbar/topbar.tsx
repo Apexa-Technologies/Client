@@ -11,7 +11,7 @@ export default function Topbar() {
     const navigate = useNavigate();
 
     const { isPending, error, data, isFetching }: any = useQuery({
-        queryKey: ["user"],
+        queryKey: ["User"],
         queryFn: getUser,
     });
 

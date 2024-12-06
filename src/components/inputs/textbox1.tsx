@@ -11,7 +11,7 @@ interface Input1Props {
 
 const TextBox1 = React.memo((props: Input1Props) => {
     return (
-        <div className="w-full h-full m-3 bg-darkprimary rounded-3xl flex p-4 focus-within:border-2 focus-within:border-pink60">
+        <div className="w-full h-full bg-darkprimary rounded-[2rem] flex p-4 focus-within:border-2 focus-within:border-pink60">
             <textarea
                 placeholder={props.input}
                 id={props.id}
