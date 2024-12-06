@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import Button2 from "../../../inputs/button2";
 import Dots from "../../../inputs/dots";
 import { getQuickNotes } from "../../../../api/api";
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import NewNotesModal from "../../modals/notes";
 
 export default function Notes() {

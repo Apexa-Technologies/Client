@@ -13,6 +13,7 @@ export default function Topbar() {
     const { isPending, error, data, isFetching }: any = useQuery({
         queryKey: ["User"],
         queryFn: getUser,
+        staleTime: 1000 * 60,
     });
 
     function Topbar_Buttons() {
