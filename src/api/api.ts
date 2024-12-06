@@ -56,3 +56,22 @@ export async function getLast5Days() {
         console.log(error);
     }
 }
+
+export async function getUser() {
+    try {
+        const response = await axios.get("user", {
+            headers: {
+                Authorization: localStorage.getItem("AUTH") || "",
+            },
+        });
+        if (response.status === 200) {
+            return response.data;
+        } else if (response.status === 403) {
+            console.log("Forbidden");
+        } else {
+            console.log("No Response from server or No Data");
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}

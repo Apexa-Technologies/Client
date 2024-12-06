@@ -20,7 +20,7 @@ export default function NewTradePanel(props: any) {
         mutationFn: postTrades,
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ["Trades"] });
-            queryClient.invalidateQueries({ queryKey: ["Days"] });
+            queryClient.invalidateQueries({ queryKey: ["5Days"] });
             toast.success("Added New Trade!");
             props.close();
         },
@@ -55,7 +55,7 @@ export default function NewTradePanel(props: any) {
                     </div>
                 </div>
                 <div className="flex flex-col items-center grow gap-8">
-                    <div className="flex w-full">
+                    <div className="flex w-full gap-8">
                         <Input1
                             type="number"
                             input="Entry Price"
@@ -65,6 +65,7 @@ export default function NewTradePanel(props: any) {
                                 e: React.ChangeEvent<HTMLInputElement>
                             ) => setEntry(parseFloat(e.target.value))}
                         />
+
                         <Input1
                             type="number"
                             input="Stop Loss"

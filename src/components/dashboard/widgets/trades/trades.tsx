@@ -3,6 +3,7 @@ import NewTradePanel from "../../modals/newTrade";
 import { getTrades } from "../../../../api/api";
 import { useQuery } from "@tanstack/react-query";
 import TradeModal from "../../modals/trade";
+import Dots from "../../../inputs/dots";
 
 export default function Trades() {
     const [selectedTrade, setTrade] = useState(null);
@@ -79,7 +80,11 @@ export default function Trades() {
     if (data) {
         return (
             <div className="w-full flex flex-col p-5 h-full">
-                <h1 className="text-4xl">Recent Trades</h1>
+                <div className="flex justify-between items-center">
+                    <h1 className="text-4xl">Recent Trades</h1>
+                    <Dots />
+                </div>
+
                 <div className="flex flex-col h-full grow justify-between">
                     <div className="flex flex-col gap-3 mt-3 overflow-hidden mb-3">
                         {displayTrades()}

@@ -4,10 +4,16 @@ import help from "../../assets/help.svg";
 import page from "./topbar.module.scss";
 import { useNavigate } from "react-router-dom";
 import { RoutePath } from "../../constants/path";
+import { useQuery } from "@tanstack/react-query";
+import { getUser } from "../../api/api";
 
 export default function Topbar() {
     const navigate = useNavigate();
-    const firstName = "Anthony";
+
+    const { isPending, error, data, isFetching }: any = useQuery({
+        queryKey: ["user"],
+        queryFn: getUser,
+    });
 
     function Topbar_Buttons() {
         return (
@@ -73,14 +79,17 @@ export default function Topbar() {
         );
     }
 
-    return (
-        <div className={page.Topbar_Wrapper}>
-            <p className={page.Welcome_Message}>Welcome Back, {firstName}!</p>
-            <p className={page.Title}>Apexa Journal</p>
-            <div className={page.Topbar_Right}>
-                <Topbar_Date />
-                <Topbar_Buttons />
+    if (data)
+        return (
+            <div className={page.Topbar_Wrapper}>
+                <p className={page.Welcome_Message}>
+                    Welcome Back, {data.firstName}!
+                </p>
+                <p className={page.Title}>Apexa Journal</p>
+                <div className={page.Topbar_Right}>
+                    <Topbar_Date />
+                    <Topbar_Buttons />
+                </div>
             </div>
-        </div>
-    );
+        );
 }

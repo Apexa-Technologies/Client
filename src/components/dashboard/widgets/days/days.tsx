@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { getLast5Days } from "../../../../api/api";
 import { useState } from "react";
 import DayModal from "../../modals/day";
+import Dots from "../../../inputs/dots";
 
 export default function Days() {
     const [isModalOpen, setModal] = useState(false);
@@ -73,7 +74,10 @@ export default function Days() {
     if (error) {
         return (
             <div className="w-full flex flex-col p-5">
-                <h1 className="text-4xl">Recent Days</h1>
+                <div className="flex justify-between items-center">
+                    <h1 className="text-4xl">Recent Days</h1>
+                    <Dots />
+                </div>
                 <div className="flex flex-col gap-3 mt-3 overflow-hidden mb-3">
                     <h1 className="text-3xl opacity-80">Error</h1>
                 </div>
@@ -84,7 +88,10 @@ export default function Days() {
     if (isFetching || isPending) {
         return (
             <div className="w-full flex flex-col p-5">
-                <h1 className="text-4xl">Recent Days</h1>
+                <div className="flex justify-between items-center">
+                    <h1 className="text-4xl">Recent Days</h1>
+                    <Dots />
+                </div>
                 <div className="flex flex-col gap-3 mt-3 overflow-hidden mb-3">
                     <h1 className="text-3xl opacity-80">Loading</h1>
                 </div>
@@ -96,7 +103,10 @@ export default function Days() {
         return (
             <>
                 <div className="w-full flex flex-col p-5">
-                    <h1 className="text-4xl">Recent Days</h1>
+                    <div className="flex justify-between items-center">
+                        <h1 className="text-4xl">Recent Days</h1>
+                        <Dots />
+                    </div>
                     <div className="flex flex-col gap-3 mt-3 overflow-hidden mb-3">
                         {displayDays()}
                     </div>
