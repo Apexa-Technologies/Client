@@ -75,3 +75,22 @@ export async function getUser() {
         console.log(error);
     }
 }
+
+export async function getQuickNotes() {
+    try {
+        const response = await axios.get("quicknotes", {
+            headers: {
+                Authorization: localStorage.getItem("AUTH") || "",
+            },
+        });
+        if (response.status === 200) {
+            return response.data;
+        } else if (response.status === 403) {
+            console.log("Forbidden");
+        } else {
+            console.log("No response from the server");
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}

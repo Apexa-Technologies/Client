@@ -1,8 +1,13 @@
+import { useQuery } from "@tanstack/react-query";
 import Button2 from "../../../inputs/button2";
 import Dots from "../../../inputs/dots";
+import { getQuickNotes } from "../../../../api/api";
 
 export default function Notes() {
-    const data: any = [];
+    const { data } = useQuery({
+        queryKey: ["notes"],
+        queryFn: getQuickNotes,
+    });
 
     function Notes() {
         if (data.length <= 0) {
@@ -27,9 +32,7 @@ export default function Notes() {
                     </div>
                     <Dots />
                 </div>
-                <div>
-                    <Notes />
-                </div>
+                <div>{/* <Notes /> */}</div>
             </div>
         </>
     );
